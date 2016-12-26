@@ -1,6 +1,4 @@
-Nuova mod che aggiunge tanti funghi e piante utili da mangiare divisi per bene per biomi!
-Ci saranna funghi di ogni tipo (micorrizici e saprofiti), cianobatteri, cespugli, arbusti, bacche, piante esotiche, velenose e si potrà ricavare cose anche dalle piante già esistenti.
-Ci saranno anche due nuove macchine: l'essicatore e il paiolo
+
 
 Fungi:
 Boletus edulis (myc, comm)
@@ -11,16 +9,16 @@ Cantharellus cibarius (myc, comm)
 Armillaria mellea (sapr, comm, tronco)
 Boletus satanas (myc, vel)
 Fistulina hepatica (sapr, comm, tronco)
-Psilocybe cubensis (sapr, vel, comm)
-Lycoperdon perlatum ()
-Morchella conica ()
-Mycena chlorophos ()
-Panellus pusillus ()
-Gyromitra esculenta ()
-Coprinus atramentarius
-Suillus granulatus
-Russula xerampelina
-Amanita muscaria
+Psilocybe cubensis (sapr, vel, terra)
+Lycoperdon perlatum (sapr, comm, terra)
+Morchella conica (myc, comm) da cuocere!
+Mycena chlorophos (sapr, vel, tronco)
+Panellus pusillus (sapr, velnullo, tronco)
+Gyromitra esculenta (sapr, vel, terra)
+Coprinus atramentarius (sapr, vel, terra)
+Suillus granulatus (myc, comm)
+Russula xerampelina (myc, vel da cuocere)
+Amanita muscaria (myc, vel)
 
 Glomus mossea
 Scutellospora heterogama
