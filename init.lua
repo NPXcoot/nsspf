@@ -208,7 +208,7 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree)
 						for dz = -2,1 do
 							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
 							local n = minetest.get_node(pos1).name
-							if string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
 								flag = 1
 								return
 							end
