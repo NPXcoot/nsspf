@@ -29,3 +29,11 @@ Terfezia arenaria
 
 Plants:
 Crops/plains:
+
+Jungle fungi:
+Ganoderma lucidum
+Marasmius haematocephalus
+ Lentinus strigosus
+ Clitocybula azurea
+ 
+ Snowbank fungi (removing normal fungi from pineforest with snow)
