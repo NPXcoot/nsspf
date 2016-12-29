@@ -37,3 +37,6 @@ Marasmius haematocephalus
  Clitocybula azurea
  
  Snowbank fungi (removing normal fungi from pineforest with snow)
+ Plectania nannfeldtii
+ Clitocybe glacialis
+ Hygrophorus goetzii

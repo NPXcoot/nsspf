@@ -350,6 +350,16 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree)
 			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
 		end
 	})
+	
+	minetest.register_abm({
+		nodenames = {"nsspf:"..name.."_mycelium"},
+		neighbors = {"default:dirt_with_snow"},
+		interval = 1,
+		chance = 1,
+		action = function(pos, node)
+			minetest.set_node(pos, {name="default:dirt"})
+		end
+	})
 
 	minetest.register_abm({
 		nodenames = {"default:dirt"},
@@ -376,6 +386,8 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree)
 			end
 		end
 	})
+	
+	
 end
 
 
@@ -676,8 +688,11 @@ end
 
 nssbf_register_saprotrophicontrees ('armillaria_mellea', 'Armillaria mellea', 'default:tree')
 nssbf_register_saprotrophicontrees ('panellus_pusillus', 'Panellus pusillus', 'default:tree')
-nssbf_register_saprotrophicontrees ('fistulina_hepatica', 'Fistulina hepatica', 'default:jungle_tree')
-nssbf_register_saprotrophicontrees ('mycena_chlorophos', 'Mycena clorophos', 'default:jungle_tree')
+nssbf_register_saprotrophicontrees ('fistulina_hepatica', 'Fistulina hepatica', 'default:pine_tree')
+nssbf_register_saprotrophicontrees ('mycena_chlorophos', 'Mycena clorophos', 'default:dirt')
+nssbf_register_saprotrophicontrees ('clitocybula_azurea', 'Clitocybula azurea', 'default:jungletree')
+nssbf_register_saprotrophicontrees ('ganoderma_lucidum', 'Ganoderma lucidum', 'default:jungletree')
+
 
 local OPEN_TIME_START = 0.2 -- Day time at which moon flowers open up
 local OPEN_TIME_END = 0.8 -- Day time at which moon flowers close up
@@ -962,3 +977,109 @@ nsspf_register_saprotrophicground ('coprinus_atramentarius','Coprinus atramentar
 nsspf_register_saprotrophicground ('lycoperdon_pyriforme','Lycoperdon piriforme')
 nsspf_register_saprotrophicground ('psilocybe_cubensis','Psilocybe cubensis')
 nsspf_register_saprotrophicground ('gyromitra_esculenta','Gyromitra esculenta')
+
+--jungle fungi
+
+minetest.register_node("nsspf:lentinus_strigosus", {
+	description = "Lentinus strigosus",
+	drawtype = "mesh",
+	mesh = "lentinus_strigosus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"lentinus_strigosus.png"},
+	groups = {snappy=3},
+--  drop = 'default:dirt',
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:ganoderma_lucidum", {
+	description = "Ganoderma lucidum",
+	drawtype = "mesh",
+	mesh = "fistulina_hepatica.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"ganoderma_lucidum.png"},
+	groups = {snappy=3},
+--  drop = 'default:dirt',
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:marasmius_haematocephalus", {
+	description = "Marasmius haematocephalus",
+	drawtype = "mesh",
+	mesh = "marasmius_haematocephalus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"marasmius_haematocephalus.png"},
+	groups = {snappy=3},
+--  drop = 'default:dirt',
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:clitocybula_azurea", {
+	description = "Clitocybula_azurea",
+	drawtype = "mesh",
+	mesh = "clitocybula_azurea.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"clitocybula_azurea.png"},
+	groups = {snappy=3},
+--  drop = 'default:dirt',
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_abm({
+	nodenames = {"default:jungletree"},
+	neighbors = {"air"},
+	interval = 400.0,
+	chance = 80,
+	action = function(pos, node)
+		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
+		local n = minetest.env:get_node(pos1).name
+		if n == 'air' then
+			minetest.set_node({x = pos.x, y = pos.y+1, z = pos.z}, {name = "nsspf:marasmius_haematocephalus"})
+		end
+	end
+})
+
+minetest.register_abm({
+	nodenames = {"default:jungletree"},
+	neighbors = {"air"},
+	interval = 400.0,
+	chance = 80,
+	action = function(pos, node)
+		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
+		local n = minetest.env:get_node(pos1).name
+		if n == 'air' then
+			minetest.set_node({x = pos.x, y = pos.y+1, z = pos.z}, {name = "nsspf:lentinus_strigosus"})
+		end
+	end
+})
