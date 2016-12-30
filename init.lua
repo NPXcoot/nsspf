@@ -6,7 +6,26 @@ minetest.register_node("nsspf:boletus_edulis", {
     paramtype2 = 'facedir',
 	tiles = {"boletus_edulis.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(2),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_boletus_edulis", {
+	description = "Cooked Boletus edulis",
+	drawtype = "mesh",
+	mesh = "boletus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_boletus_edulis.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(16),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -40,7 +59,26 @@ minetest.register_node("nsspf:cantharellus_cibarius", {
     paramtype2 = 'facedir',
 	tiles = {"cantharellus_cibarius.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(1),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, -0.26, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, -0.26, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_cantharellus_cibarius", {
+	description = "Cooked Cantharellus cibarius",
+	drawtype = "mesh",
+	mesh = "cantharellus_cibarius.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_cantharellus_cibarius.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(8),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, -0.26, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -74,7 +112,26 @@ minetest.register_node("nsspf:suillus_grevillei", {
     paramtype2 = 'facedir',
 	tiles = {"suillus_grevillei.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(1),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_suillus_grevillei", {
+	description = "Cooked Suillus grevillei",
+	drawtype = "mesh",
+	mesh = "suillus_grevillei.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_suillus_grevillei.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(10),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -108,7 +165,26 @@ minetest.register_node("nsspf:morchella_conica", {
     paramtype2 = 'facedir',
 	tiles = {"morchella_conica.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(2),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.15, -0.49, -0.15, 0.15, 0.06, 0.15}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.15, -0.49, -0.15, 0.15, 0.06, 0.15}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_morchella_conica", {
+	description = "Cooked Morchella conica",
+	drawtype = "mesh",
+	mesh = "morchella_conica.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_morchella_conica.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(8),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.15, -0.49, -0.15, 0.15, 0.06, 0.15}, -- Right, Bottom, Back, Left, Top, Front
@@ -142,7 +218,26 @@ minetest.register_node("nsspf:russula_xerampelina", {
     paramtype2 = 'facedir',
 	tiles = {"russula_xerampelina.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-8),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_russula_xerampelina", {
+	description = "Cooked Russula xerampelina",
+	drawtype = "mesh",
+	mesh = "russula.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_russula_xerampelina.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(6),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -176,7 +271,26 @@ minetest.register_node("nsspf:boletus_pinophilus", {
     paramtype2 = 'facedir',
 	tiles = {"boletus_pinophilus.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(2),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_boletus_pinophilus", {
+	description = "Cooked Boletus pinophilus",
+	drawtype = "mesh",
+	mesh = "boletus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_boletus_pinophilus.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(16),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -210,7 +324,26 @@ minetest.register_node("nsspf:boletus_satanas", {
     paramtype2 = 'facedir',
 	tiles = {"boletus_satanas.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-20),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_boletus_satanas", {
+	description = "Cooked Boletus satanas",
+	drawtype = "mesh",
+	mesh = "boletus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_boletus_satanas.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-16),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -244,7 +377,26 @@ minetest.register_node("nsspf:amanita_phalloides", {
     paramtype2 = 'facedir',
 	tiles = {"amanita_phalloides.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-20),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_amanita_phalloides", {
+	description = "Cooked Amanita phalloides",
+	drawtype = "mesh",
+	mesh = "amanita.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_amanita_phalloides.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-20),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -278,7 +430,26 @@ minetest.register_node("nsspf:amanita_muscaria", {
     paramtype2 = 'facedir',
 	tiles = {"amanita_muscaria.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-20),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_amanita_muscaria", {
+	description = "Cooked Amanita muscaria",
+	drawtype = "mesh",
+	mesh = "amanita.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_amanita_muscaria.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-18),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -403,7 +574,7 @@ nsspf_register_mycorrhizalmycelium ('morchella_conica','Morchella conica Myceliu
 
 
 --tuber
-function nsspf_register_tuber (name, descr, tree, int, ch)
+function nsspf_register_tuber (name, descr, tree, int, ch, gnam)
 
 	minetest.register_node("nsspf:"..name.."_tuber_mycelium", {
 		description = descr,
@@ -463,6 +634,7 @@ function nsspf_register_tuber (name, descr, tree, int, ch)
 
 	minetest.register_craftitem("nsspf:"..name, {
 		description = descr,
+		on_use = minetest.item_eat(gnam),
 		image = name..".png",
 	})
 
@@ -483,10 +655,10 @@ function nsspf_register_tuber (name, descr, tree, int, ch)
 
 end
 
-nsspf_register_tuber ("tuber_magnatum_pico","Tuber magnatum pico","default:tree", 30, 30)
-nsspf_register_tuber ("tuber_melanosporum","Tuber melanosporum","default:pine_tree", 18, 18)
-nsspf_register_tuber ("tuber_borchii","Tuber borchii","default:aspen_tree", 12, 12)
-nsspf_register_tuber ("terfezia_arenaria","Terfezia arenaria","default:acacia_tree", 10, 10)
+nsspf_register_tuber ("tuber_magnatum_pico","Tuber magnatum pico","default:tree", 30, 30, 20)
+nsspf_register_tuber ("tuber_melanosporum","Tuber melanosporum","default:pine_tree", 18, 18, 16)
+nsspf_register_tuber ("tuber_borchii","Tuber borchii","default:aspen_tree", 12, 12, 12)
+nsspf_register_tuber ("terfezia_arenaria","Terfezia arenaria","default:acacia_tree", 10, 10, 12)
 
 
 minetest.register_node("nsspf:tuber_melanosporum_fungusdirt", {
@@ -559,7 +731,26 @@ minetest.register_node("nsspf:fistulina_hepatica", {
     paramtype2 = 'facedir',
 	tiles = {"fistulina_hepatica.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(4),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_fistulina_hepatica", {
+	description = "Cooked Fistulina hepatica",
+	drawtype = "mesh",
+	mesh = "fistulina_hepatica.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_fistulina_hepatica.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(14),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -578,7 +769,26 @@ minetest.register_node("nsspf:armillaria_mellea", {
     paramtype2 = 'facedir',
 	tiles = {"armillaria_mellea.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(2),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_armillaria_mellea", {
+	description = "Cooked Armillaria mellea",
+	drawtype = "mesh",
+	mesh = "armillaria_mellea.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_armillaria_mellea.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(12),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -597,7 +807,26 @@ minetest.register_node("nsspf:mycena_chlorophos", {
     paramtype2 = 'facedir',
 	tiles = {"mycena_chlorophos.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-2),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_mycena_chlorophos", {
+	description = "Cooked Mycena chlorophos",
+	drawtype = "mesh",
+	mesh = "mycena_chlorophos.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_mycena_chlorophos.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-4),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -616,7 +845,7 @@ minetest.register_node("nsspf:mycena_chlorophos_light", {
     paramtype2 = 'facedir',
 	tiles = {"mycena_chlorophos_light.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-2),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -635,7 +864,26 @@ minetest.register_node("nsspf:panellus_pusillus", {
     paramtype2 = 'facedir',
 	tiles = {"panellus_pusillus.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-2),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_panellus_pusillus", {
+	description = "Cooked Panellus pusillus",
+	drawtype = "mesh",
+	mesh = "panellus_pusillus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_panellus_pusillus.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-4),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -655,7 +903,7 @@ minetest.register_node("nsspf:panellus_pusillus_light", {
 	tiles = {"panellus_pusillus_light.png"},
 	groups = {snappy=3},
 	light_source = 10,
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-2),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -747,7 +995,26 @@ minetest.register_node("nsspf:macrolepiota_procera", {
     paramtype2 = 'facedir',
 	tiles = {"macrolepiota_procera.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(3),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_macrolepiota_procera", {
+	description = "Cooked Macrolepiota procera",
+	drawtype = "mesh",
+	mesh = "macrolepiota_procera.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_macrolepiota_procera.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(16),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -781,7 +1048,26 @@ minetest.register_node("nsspf:psilocybe_cubensis", {
     paramtype2 = 'facedir',
 	tiles = {"psilocybe_cubensis.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-7),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_psilocybe_cubensis", {
+	description = "Cooked Psilocybe cubensis",
+	drawtype = "mesh",
+	mesh = "psilocybe_cubensis.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_psilocybe_cubensis.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(2),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
@@ -815,7 +1101,26 @@ minetest.register_node("nsspf:lycoperdon_pyriforme", {
     paramtype2 = 'facedir',
 	tiles = {"lycoperdon_pyriforme.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(8),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_lycoperdon_pyriforme", {
+	description = "Cooked Lycoperdon pyriforme",
+	drawtype = "mesh",
+	mesh = "lycoperdon_pyriforme.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_lycoperdon_pyriforme.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(12),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
@@ -849,7 +1154,26 @@ minetest.register_node("nsspf:gyromitra_esculenta", {
     paramtype2 = 'facedir',
 	tiles = {"gyromitra_esculenta.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-20),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, -0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, -0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_gyromitra_esculenta", {
+	description = "Cooked Gyromitra esculenta",
+	drawtype = "mesh",
+	mesh = "gyromitra_esculenta.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_gyromitra_esculenta.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-16),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, -0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -883,7 +1207,26 @@ minetest.register_node("nsspf:coprinus_atramentarius", {
     paramtype2 = 'facedir',
 	tiles = {"coprinus_atramentarius.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-13),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_coprinus_atramentarius", {
+	description = "Cooked Coprinus atramentarius",
+	drawtype = "mesh",
+	mesh = "coprinus_atramentarius.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_coprinus_atramentarius.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(6),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -998,7 +1341,26 @@ minetest.register_node("nsspf:lentinus_strigosus", {
     paramtype2 = 'facedir',
 	tiles = {"lentinus_strigosus.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(1),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_lentinus_strigosus", {
+	description = "Cooked Lentinus strigosus",
+	drawtype = "mesh",
+	mesh = "lentinus_strigosus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_lentinus_strigosus.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(16),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1017,7 +1379,26 @@ minetest.register_node("nsspf:ganoderma_lucidum", {
     paramtype2 = 'facedir',
 	tiles = {"ganoderma_lucidum.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(14),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_ganoderma_lucidum", {
+	description = "Cooked Ganoderma lucidum",
+	drawtype = "mesh",
+	mesh = "fistulina_hepatica.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_ganoderma_lucidum.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(4),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1036,7 +1417,26 @@ minetest.register_node("nsspf:marasmius_haematocephalus", {
     paramtype2 = 'facedir',
 	tiles = {"marasmius_haematocephalus.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-1),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_marasmius_haematocephalus", {
+	description = "Cooked Marasmius haematocephalus",
+	drawtype = "mesh",
+	mesh = "marasmius_haematocephalus.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_marasmius_haematocephalus.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-19),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
@@ -1055,7 +1455,26 @@ minetest.register_node("nsspf:clitocybula_azurea", {
     paramtype2 = 'facedir',
 	tiles = {"clitocybula_azurea.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-6),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_clitocybula_azurea", {
+	description = "Cooked Clitocybula_azurea",
+	drawtype = "mesh",
+	mesh = "clitocybula_azurea.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_clitocybula_azurea.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(10),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1104,7 +1523,26 @@ minetest.register_node("nsspf:clitocybe_glacialis", {
     paramtype2 = 'facedir',
 	tiles = {"clitocybe_glacialis.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(1),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_clitocybe_glacialis", {
+	description = "Cooked Clitocybe glacialis",
+	drawtype = "mesh",
+	mesh = "clitocybe_glacialis.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_clitocybe_glacialis.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(10),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1138,7 +1576,26 @@ minetest.register_node("nsspf:hygrophorus_goetzii", {
     paramtype2 = 'facedir',
 	tiles = {"hygrophorus_goetzii.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-4),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_hygrophorus_goetzii", {
+	description = "Cooked Hygrophorus goetzii",
+	drawtype = "mesh",
+	mesh = "hygrophorus_goetzii.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_hygrophorus_goetzii.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(8),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1172,7 +1629,26 @@ minetest.register_node("nsspf:plectania_nannfeldtii", {
     paramtype2 = 'facedir',
 	tiles = {"plectania_nannfeldtii.png"},
 	groups = {snappy=3},
---  drop = 'default:dirt',
+	on_use = minetest.item_eat(-20),
+	selection_box = {
+      type = 'fixed',
+      fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
+      },
+   collision_box = {
+      type = 'fixed',
+      fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
+      },
+})
+
+minetest.register_node("nsspf:cooked_plectania_nannfeldtii", {
+	description = "Cooked Plectania nannfeldtii",
+	drawtype = "mesh",
+	mesh = "plectania_nannfeldtii.b3d",
+    paramtype = 'light',
+    paramtype2 = 'facedir',
+	tiles = {"cooked_plectania_nannfeldtii.png"},
+	groups = {snappy=3},
+	on_use = minetest.item_eat(-20),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
@@ -1269,3 +1745,41 @@ end
 nsspf_register_snowbankfungi ('plectania_nannfeldtii','Plectania nannfeldtii', 18, 10)
 nsspf_register_snowbankfungi ('hygrophorus_goetzii','Hygrophorus goetzii', 16, 10)
 nsspf_register_snowbankfungi ('clitocybe_glacialis','Clitocybe glacialis', 15, 10)
+
+
+function nsspf_register_recipes (name)
+
+minetest.register_craft({
+	type = "cooking",
+	output = "nsspf:cooked_"..name,
+	recipe = "nsspf:"..name,
+	cooktime = 10,
+})
+
+end
+
+nsspf_register_recipes ('boletus_edulis')
+nsspf_register_recipes ('boletus_pinophilus')
+nsspf_register_recipes ('boletus_satanas')
+nsspf_register_recipes ('suillus_grevillei')
+nsspf_register_recipes ('morchella_conica')
+nsspf_register_recipes ('amanita_phalloides')
+nsspf_register_recipes ('amanita_muscaria')
+nsspf_register_recipes ('cantharellus_cibarius')
+nsspf_register_recipes ('russula_xerampelina')
+nsspf_register_recipes ('fistulina_hepatica')
+nsspf_register_recipes ('armillaria_mellea')
+nsspf_register_recipes ('mycena_chlorophos')
+nsspf_register_recipes ('panellus_pusillus')
+nsspf_register_recipes ('macrolepiota_procera')
+nsspf_register_recipes ('psilocybe_cubensis')
+nsspf_register_recipes ('lycoperdon_pyriforme')
+nsspf_register_recipes ('coprinus_atramentarius')
+nsspf_register_recipes ('gyromitra_esculenta')
+nsspf_register_recipes ('clitocybe_glacialis')
+nsspf_register_recipes ('plectania_nannfeldtii')
+nsspf_register_recipes ('hygrophorus_goetzii')
+nsspf_register_recipes ('lentinus_strigosus')
+nsspf_register_recipes ('ganoderma_lucidum')
+nsspf_register_recipes ('marasmius_haematocephalus')
+nsspf_register_recipes ('clitocybula_azurea')
