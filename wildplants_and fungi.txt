@@ -20,15 +20,9 @@ Suillus granulatus (myc, comm)
 Russula xerampelina (myc, vel da cuocere)
 Amanita muscaria (myc, vel)
 
-Glomus mossea
-Scutellospora heterogama
 Tuber magnatum pico
 Tuber niger
 Terfezia arenaria
-
-
-Plants:
-Crops/plains:
 
 Jungle fungi:
 Ganoderma lucidum
@@ -36,7 +30,48 @@ Marasmius haematocephalus
  Lentinus strigosus
  Clitocybula azurea
  
- Snowbank fungi (removing normal fungi from pineforest with snow)
+ Snowbank fungi
  Plectania nannfeldtii
  Clitocybe glacialis
  Hygrophorus goetzii
+ 
+ spores
+ eating
+ 
+ Endmychorrizae
+ 
+ Plants:
+ Amaranthus
+ Asparagus
+ Burdock
+ Cattail
+ Clover
+ Chickweed 
+ Curled Dock
+ Fireweed
+ Plantain
+ Prickly Pear Cactus
+ Purslane
+ Bursapastoris
+ Wood Sorrel
+ Blackberries mora
+ Elderberries sambuco
+ Gooseberries ribes rosso
+ Wild Garlic
+ Nasturtium officinale
+ Lamb’s Quarters
+ Milk Thistle
+ Sheep Sorrel
+ Alchechengi
+ Aneto
+ Angelica
+ Avena
+ Borraggine
+ Cappero
+ Carciofo
+ Daucus carota L
+ Cetriolo
+ Cipolla
+ Ceterach officinarum
+ Fragola
+ Giaggiolo
