@@ -577,8 +577,8 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch)
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_grass"},
-		interval = 12*int,
-		chance = 4*ch,
+		interval = 4*int,
+		chance = 8*ch,
 		action = function(pos, node)
 			local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
 			local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
@@ -880,6 +880,7 @@ minetest.register_node("nsspf:mycena_chlorophos_light", {
     paramtype2 = 'facedir',
 	tiles = {"mycena_chlorophos_light.png"},
 	groups = {snappy=3},
+	light_source = 8,
 	on_use = minetest.item_eat(-2),
 	selection_box = {
       type = 'fixed',
@@ -937,7 +938,7 @@ minetest.register_node("nsspf:panellus_pusillus_light", {
     paramtype2 = 'facedir',
 	tiles = {"panellus_pusillus_light.png"},
 	groups = {snappy=3},
-	light_source = 10,
+	light_source = 8,
 	on_use = minetest.item_eat(-2),
 	selection_box = {
       type = 'fixed',
@@ -956,8 +957,8 @@ function nssbf_register_saprotrophicontrees (name, descr, tree, int, ch)
 minetest.register_abm({
 	nodenames = {tree},
 	neighbors = {"air"},
-	interval = 40*int,
-	chance = 6*ch,
+	interval = 30*int,
+	chance = 20*ch,
 	action = function(pos, node)
 		local pos1 = {x=pos.x, y=pos.y, z=pos.z-1}
 		local n = minetest.env:get_node(pos1).name
@@ -970,28 +971,27 @@ minetest.register_abm({
 end
 
 nssbf_register_saprotrophicontrees ('armillaria_mellea', 'Armillaria mellea', 'default:tree', 12, 20)
-nssbf_register_saprotrophicontrees ('panellus_pusillus', 'Panellus pusillus', 'default:tree', 18, 22)
+nssbf_register_saprotrophicontrees ('panellus_pusillus', 'Panellus pusillus', 'default:tree', 25, 52)
 nssbf_register_saprotrophicontrees ('fistulina_hepatica', 'Fistulina hepatica', 'default:pine_tree', 10, 20)
-nssbf_register_saprotrophicontrees ('mycena_chlorophos', 'Mycena clorophos', 'default:dirt', 30, 30)
-nssbf_register_saprotrophicontrees ('clitocybula_azurea', 'Clitocybula azurea', 'default:jungletree', 12, 20)
-nssbf_register_saprotrophicontrees ('ganoderma_lucidum', 'Ganoderma lucidum', 'default:jungletree', 14, 20)
+nssbf_register_saprotrophicontrees ('mycena_chlorophos', 'Mycena clorophos', 'default:dirt', 30, 50)
+nssbf_register_saprotrophicontrees ('clitocybula_azurea', 'Clitocybula azurea', 'default:jungletree', 12, 30)
+nssbf_register_saprotrophicontrees ('ganoderma_lucidum', 'Ganoderma lucidum', 'default:jungletree', 14, 30)
 
 
-local OPEN_TIME_START = 0.2 -- Day time at which moon flowers open up
-local OPEN_TIME_END = 0.8 -- Day time at which moon flowers close up
-local OPEN_CHECK = 10 -- Interval at which to check if lighting changed
+local OPEN_TIME_START = 0.2 
+local OPEN_TIME_END = 0.8  
+local OPEN_CHECK = 10 
 
 set_fluo = function (pos)
-	if (minetest.env:get_node_light(pos, 0.5) == 15)
-	and ((minetest.env:get_timeofday() < OPEN_TIME_START) or (minetest.env:get_timeofday() > OPEN_TIME_END)) then
-		minetest.env:add_node(pos, { name = "nsspf:mycena_chlorophos" })
-	else
+	if (minetest.get_node_light(pos, nil) < 10) and ((minetest.get_timeofday() < 19500) or (minetest.get_timeofday() > 5000)) then
 		minetest.env:add_node(pos, { name = "nsspf:mycena_chlorophos_light" })
+	else
+		minetest.env:add_node(pos, { name = "nsspf:mycena_chlorophos" })
 	end
 end
 
 minetest.register_abm({
-	nodenames = { "nsspf:mycena_chlorophos", "nsspf:mycena_chlorophos_light" },
+	nodenames = { "nsspf:mycena_chlorophos", "nsspf:mycena_chlorophos_light"},
 	interval = OPEN_CHECK,
 	chance = 1,
 
@@ -1001,11 +1001,10 @@ minetest.register_abm({
 })
 
 set_fluor = function (pos)
-	if (minetest.env:get_node_light(pos, 0.5) == 15)
-	and ((minetest.env:get_timeofday() < OPEN_TIME_START) or (minetest.env:get_timeofday() > OPEN_TIME_END)) then
-		minetest.env:add_node(pos, { name = "nsspf:panellus_pusillus" })
-	else
+	if (minetest.get_node_light(pos, nil) < 10) and ((minetest.get_timeofday() < 19500) or (minetest.get_timeofday() > 5000)) then
 		minetest.env:add_node(pos, { name = "nsspf:panellus_pusillus_light" })
+	else
+		minetest.env:add_node(pos, { name = "nsspf:panellus_pusillus" })
 	end
 end
 
@@ -1307,7 +1306,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_grass"},
-		interval = 12*int,
+		interval = 4*int,
 		chance = 2*ch,
 		action = function(pos, node)
 			local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
@@ -1333,7 +1332,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 	minetest.register_abm({
 		nodenames = {"default:dirt"},
 		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 16*int,
+		interval = 10*int,
 		chance = 4*ch,
 		action = function(pos, node)
 			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
@@ -1363,7 +1362,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 
 	end
 
-nsspf_register_saprotrophicground ('macrolepiota_procera','Macrolepiota procera', 12, 10)
+nsspf_register_saprotrophicground ('macrolepiota_procera','Macrolepiota procera', 10, 10)
 nsspf_register_saprotrophicground ('coprinus_atramentarius','Coprinus atramentarius', 18, 10 )
 nsspf_register_saprotrophicground ('lycoperdon_pyriforme','Lycoperdon piriforme',8, 10 )
 nsspf_register_saprotrophicground ('psilocybe_cubensis','Psilocybe cubensis', 22, 13)
@@ -1743,8 +1742,8 @@ function nsspf_register_snowbankfungi (name, descr, int, ch)
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_snow"},
-		interval = 10.0*int,
-		chance = 6*ch,
+		interval = 4*int,
+		chance = 4*ch,
 		action = function(pos, node)
 			local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
 			local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
@@ -1824,3 +1823,22 @@ nsspf_register_recipes ('lentinus_strigosus')
 nsspf_register_recipes ('ganoderma_lucidum')
 nsspf_register_recipes ('marasmius_haematocephalus')
 nsspf_register_recipes ('clitocybula_azurea')
+
+
+	minetest.register_abm({
+		nodenames = {"flowers:mushroom_red"},
+		interval = 1,
+		chance = 1,
+		action = function(pos, node)
+			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "air"})
+		end
+	})
+	
+	minetest.register_abm({
+		nodenames = {"flowers:mushroom_brown"},
+		interval = 1,
+		chance = 1,
+		action = function(pos, node)
+			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "air"})
+		end
+	})
