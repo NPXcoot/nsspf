@@ -1,3 +1,32 @@
+function place_spore(itemstack, placer, pointed_thing, name, topoint, soilblock)
+
+	local pt = pointed_thing
+
+	-- check if pointing at a node
+	if not pt or pt.type ~= "node" then
+		return
+	end
+
+	local under = minetest.get_node(pt.under)
+	local uu = {x=pt.under.x, y=pt.under.y-1, z=pt.under.z}
+
+	-- return if any of the nodes is not registered
+	if not minetest.registered_nodes[under.name] then
+	end
+
+	-- if not protected then add node and remove 1 item from the itemstack
+	if not minetest.is_protected(pt.under, placer:get_player_name()) then
+		if (under.name == topoint) and (minetest.get_node(uu).name == soilblock) then
+			minetest.set_node(uu, {name = name})
+			minetest.sound_play("default_place_node", {pos = uu, gain = 1.0})
+			if not minetest.setting_getbool("creative_mode") then
+				itemstack:take_item()
+			end
+			return itemstack
+		end
+	end
+end
+
 minetest.register_node("nsspf:boletus_edulis", {
 	description = "Boletus edulis",
 	drawtype = "mesh",
@@ -486,6 +515,9 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch)
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
 		image = "spores.png",
+		on_place = function(itemstack, placer, pointed_thing)
+			return place_spore(itemstack, placer, pointed_thing, "nsspf:"..name.."_mycelium",tree, "default:dirt")
+		end,
 	})
 
 	minetest.register_abm({
@@ -521,7 +553,7 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch)
 			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_snow"},
@@ -557,8 +589,8 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch)
 			end
 		end
 	})
-	
-	
+
+
 end
 
 
@@ -641,6 +673,9 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam)
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
 		image = "spores.png",
+		on_place = function(itemstack, placer, pointed_thing)
+			return place_spore(itemstack, placer, pointed_thing, "nsspf:"..name.."_mycelium",tree, "default:dirt")
+		end,
 	})
 
 	minetest.register_abm({
@@ -1260,12 +1295,15 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 		tiles = {"saprotrophic_mycelium.png"},
 		groups = {crumbly = 2},
 	})
-	
+
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
 		image = "spores.png",
+		on_place = function(itemstack, placer, pointed_thing)
+			return place_spore(itemstack, placer, pointed_thing, "nsspf:"..name.."_mycelium","default:dirt_with_grass", "default:dirt")
+		end,
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_grass"},
@@ -1281,7 +1319,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 			end
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_snow"},
@@ -1291,7 +1329,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 			minetest.set_node(pos, {name="default:dirt"})
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"default:dirt"},
 		neighbors = {"nsspf:"..name.."_mycelium"},
@@ -1301,7 +1339,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
 		end
 	})
-	
+
 		minetest.register_abm({
 		nodenames = {"default:dirt"},
 		neighbors = {"default:dirt"},
@@ -1312,7 +1350,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 				minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"air"},
@@ -1322,9 +1360,9 @@ function nsspf_register_saprotrophicground (name, descr, int, ch)
 			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
 		end
 	})
-	
+
 	end
-	
+
 nsspf_register_saprotrophicground ('macrolepiota_procera','Macrolepiota procera', 12, 10)
 nsspf_register_saprotrophicground ('coprinus_atramentarius','Coprinus atramentarius', 18, 10 )
 nsspf_register_saprotrophicground ('lycoperdon_pyriforme','Lycoperdon piriforme',8, 10 )
@@ -1677,7 +1715,7 @@ minetest.register_node("nsspf:plectania_nannfeldtii_fungusdirt", {
 -- mette il micelio  fungusdirt
 
 function nsspf_register_snowbankfungi (name, descr, int, ch)
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"air"},
@@ -1693,12 +1731,15 @@ function nsspf_register_snowbankfungi (name, descr, int, ch)
 		tiles = {"snowbank_mycelium.png"},
 		groups = {crumbly = 2},
 	})
-	
+
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
 		image = "spores.png",
+		on_place = function(itemstack, placer, pointed_thing)
+			return place_spore(itemstack, placer, pointed_thing, "nsspf:"..name.."_mycelium","default:dirt_with_snow", "default:dirt")
+		end,
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"default:dirt_with_snow"},
@@ -1714,7 +1755,7 @@ function nsspf_register_snowbankfungi (name, descr, int, ch)
 			end
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"default:dirt_with_snow"},
 		neighbors = {"air"},
