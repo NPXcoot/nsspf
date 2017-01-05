@@ -12,6 +12,7 @@ function place_spore(itemstack, placer, pointed_thing, name, topoint, soilblock)
 
 	-- return if any of the nodes is not registered
 	if not minetest.registered_nodes[under.name] then
+		return
 	end
 
 	-- if not protected then add node and remove 1 item from the itemstack
@@ -978,9 +979,9 @@ nssbf_register_saprotrophicontrees ('clitocybula_azurea', 'Clitocybula azurea', 
 nssbf_register_saprotrophicontrees ('ganoderma_lucidum', 'Ganoderma lucidum', 'default:jungletree', 14, 30)
 
 
-local OPEN_TIME_START = 0.2 
-local OPEN_TIME_END = 0.8  
-local OPEN_CHECK = 10 
+local OPEN_TIME_START = 0.2
+local OPEN_TIME_END = 0.8
+local OPEN_CHECK = 10
 
 set_fluo = function (pos)
 	if (minetest.get_node_light(pos, nil) < 10) and ((minetest.get_timeofday() < 19500) or (minetest.get_timeofday() > 5000)) then
@@ -1833,7 +1834,7 @@ nsspf_register_recipes ('clitocybula_azurea')
 			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "air"})
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"flowers:mushroom_brown"},
 		interval = 1,
