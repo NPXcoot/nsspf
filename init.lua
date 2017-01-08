@@ -39,12 +39,15 @@ minetest.register_node("nsspf:boletus_edulis", {
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	on_use = minetest.item_eat(2),
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
-   collision_box = {
+    collision_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
@@ -63,7 +66,10 @@ minetest.register_node("nsspf:cooked_boletus_edulis", {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
-   collision_box = {
+	on_place = function(itemstack, placer, pointed_thing)
+  		return
+  	end,
+    collision_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
@@ -96,6 +102,9 @@ minetest.register_node("nsspf:cantharellus_cibarius", {
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	tiles = {"cantharellus_cibarius.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(1),
@@ -118,6 +127,9 @@ minetest.register_node("nsspf:cooked_cantharellus_cibarius", {
 	tiles = {"cooked_cantharellus_cibarius.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(8),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, -0.26, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -158,11 +170,14 @@ minetest.register_node("nsspf:suillus_grevillei", {
 	tiles = {"suillus_grevillei.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(1),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
-   collision_box = {
+    collision_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
@@ -177,11 +192,14 @@ minetest.register_node("nsspf:cooked_suillus_grevillei", {
 	tiles = {"cooked_suillus_grevillei.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(10),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
-   collision_box = {
+    collision_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
@@ -217,6 +235,9 @@ minetest.register_node("nsspf:morchella_conica", {
 	tiles = {"morchella_conica.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.15, -0.49, -0.15, 0.15, 0.06, 0.15}, -- Right, Bottom, Back, Left, Top, Front
@@ -236,6 +257,9 @@ minetest.register_node("nsspf:cooked_morchella_conica", {
 	tiles = {"cooked_morchella_conica.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(8),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.15, -0.49, -0.15, 0.15, 0.06, 0.15}, -- Right, Bottom, Back, Left, Top, Front
@@ -276,6 +300,9 @@ minetest.register_node("nsspf:russula_xerampelina", {
 	tiles = {"russula_xerampelina.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-8),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -295,6 +322,9 @@ minetest.register_node("nsspf:cooked_russula_xerampelina", {
 	tiles = {"cooked_russula_xerampelina.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(6),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -335,6 +365,9 @@ minetest.register_node("nsspf:boletus_pinophilus", {
 	tiles = {"boletus_pinophilus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -357,6 +390,9 @@ minetest.register_node("nsspf:cooked_boletus_pinophilus", {
 	tiles = {"cooked_boletus_pinophilus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(16),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -397,6 +433,9 @@ minetest.register_node("nsspf:boletus_satanas", {
 	end,
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -416,6 +455,9 @@ minetest.register_node("nsspf:cooked_boletus_satanas", {
 	tiles = {"cooked_boletus_satanas.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-16),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
@@ -456,6 +498,9 @@ minetest.register_node("nsspf:amanita_phalloides", {
 	tiles = {"amanita_phalloides.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -475,6 +520,9 @@ minetest.register_node("nsspf:cooked_amanita_phalloides", {
 	tiles = {"cooked_amanita_phalloides.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -515,6 +563,9 @@ minetest.register_node("nsspf:amanita_muscaria", {
 	end,
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -534,6 +585,9 @@ minetest.register_node("nsspf:cooked_amanita_muscaria", {
 	tiles = {"cooked_amanita_muscaria.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-18),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -782,7 +836,7 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_fruit"})
 		end
 	})
-	
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"nsspf:"..name.."_mycelium"},
@@ -913,6 +967,9 @@ minetest.register_node("nsspf:fistulina_hepatica", {
 	tiles = {"fistulina_hepatica.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(4),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -932,6 +989,9 @@ minetest.register_node("nsspf:cooked_fistulina_hepatica", {
 	tiles = {"cooked_fistulina_hepatica.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(14),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -954,6 +1014,9 @@ minetest.register_node("nsspf:armillaria_mellea", {
 	tiles = {"armillaria_mellea.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -976,6 +1039,9 @@ minetest.register_node("nsspf:fomes_fomentarius", {
 	tiles = {"fomes_fomentarius.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-1),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -995,6 +1061,9 @@ minetest.register_node("nsspf:cooked_armillaria_mellea", {
 	tiles = {"cooked_armillaria_mellea.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(12),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1017,6 +1086,9 @@ minetest.register_node("nsspf:mycena_chlorophos", {
 	tiles = {"mycena_chlorophos.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1036,6 +1108,9 @@ minetest.register_node("nsspf:cooked_mycena_chlorophos", {
 	tiles = {"cooked_mycena_chlorophos.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-4),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1059,6 +1134,9 @@ minetest.register_node("nsspf:mycena_chlorophos_light", {
 	groups = {snappy=3},
 	light_source = 8,
 	on_use = minetest.item_eat(-2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1081,6 +1159,9 @@ minetest.register_node("nsspf:panellus_pusillus", {
 	tiles = {"panellus_pusillus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1100,11 +1181,14 @@ minetest.register_node("nsspf:cooked_panellus_pusillus", {
 	tiles = {"cooked_panellus_pusillus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-4),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
-   collision_box = {
+    collision_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
@@ -1123,6 +1207,9 @@ minetest.register_node("nsspf:panellus_pusillus_light", {
 	groups = {snappy=3},
 	light_source = 8,
 	on_use = minetest.item_eat(-2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1151,7 +1238,7 @@ minetest.register_abm({
 		end
 	end
 })
-	
+
 
 end
 
@@ -1219,6 +1306,9 @@ minetest.register_node("nsspf:macrolepiota_procera", {
 	end,
 	groups = {snappy=3},
 	on_use = minetest.item_eat(3),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1238,6 +1328,9 @@ minetest.register_node("nsspf:cooked_macrolepiota_procera", {
 	tiles = {"cooked_macrolepiota_procera.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(16),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1278,6 +1371,9 @@ minetest.register_node("nsspf:psilocybe_cubensis", {
 	end,
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-7),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
@@ -1297,6 +1393,9 @@ minetest.register_node("nsspf:cooked_psilocybe_cubensis", {
 	tiles = {"cooked_psilocybe_cubensis.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(2),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
@@ -1337,6 +1436,9 @@ minetest.register_node("nsspf:lycoperdon_pyriforme", {
 	tiles = {"lycoperdon_pyriforme.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(8),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
@@ -1356,6 +1458,9 @@ minetest.register_node("nsspf:cooked_lycoperdon_pyriforme", {
 	tiles = {"cooked_lycoperdon_pyriforme.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(12),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
@@ -1396,6 +1501,9 @@ minetest.register_node("nsspf:gyromitra_esculenta", {
 	tiles = {"gyromitra_esculenta.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, -0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1415,6 +1523,9 @@ minetest.register_node("nsspf:cooked_gyromitra_esculenta", {
 	tiles = {"cooked_gyromitra_esculenta.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-16),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, -0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1455,6 +1566,9 @@ minetest.register_node("nsspf:coprinus_atramentarius", {
 	tiles = {"coprinus_atramentarius.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-13),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1474,6 +1588,9 @@ minetest.register_node("nsspf:cooked_coprinus_atramentarius", {
 	tiles = {"cooked_coprinus_atramentarius.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(6),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1580,7 +1697,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch, spread)
 			minetest.get_node_timer(pos):start(300)
 		end
 	})]]
-		
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_mycelium"},
 		neighbors = {"nsspf:"..name.."_mycelium"},
@@ -1615,7 +1732,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch, spread)
 			end
 		end
 	})
-	
+
 
 	end
 
@@ -1639,6 +1756,9 @@ minetest.register_node("nsspf:lentinus_strigosus", {
 	tiles = {"lentinus_strigosus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(1),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1658,6 +1778,9 @@ minetest.register_node("nsspf:cooked_lentinus_strigosus", {
 	tiles = {"cooked_lentinus_strigosus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(16),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1680,6 +1803,9 @@ minetest.register_node("nsspf:ganoderma_lucidum", {
 	tiles = {"ganoderma_lucidum.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(14),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1699,6 +1825,9 @@ minetest.register_node("nsspf:cooked_ganoderma_lucidum", {
 	tiles = {"cooked_ganoderma_lucidum.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(4),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1721,6 +1850,9 @@ minetest.register_node("nsspf:marasmius_haematocephalus", {
 	tiles = {"marasmius_haematocephalus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-1),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
@@ -1740,6 +1872,9 @@ minetest.register_node("nsspf:cooked_marasmius_haematocephalus", {
 	tiles = {"cooked_marasmius_haematocephalus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-19),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
@@ -1762,6 +1897,9 @@ minetest.register_node("nsspf:clitocybula_azurea", {
 	tiles = {"clitocybula_azurea.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-6),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1781,6 +1919,9 @@ minetest.register_node("nsspf:cooked_clitocybula_azurea", {
 	tiles = {"cooked_clitocybula_azurea.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(10),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -1836,6 +1977,9 @@ minetest.register_node("nsspf:clitocybe_glacialis", {
 	tiles = {"clitocybe_glacialis.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(1),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1855,6 +1999,9 @@ minetest.register_node("nsspf:cooked_clitocybe_glacialis", {
 	tiles = {"cooked_clitocybe_glacialis.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(10),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1895,6 +2042,9 @@ minetest.register_node("nsspf:hygrophorus_goetzii", {
 	tiles = {"hygrophorus_goetzii.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-4),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1914,6 +2064,9 @@ minetest.register_node("nsspf:cooked_hygrophorus_goetzii", {
 	tiles = {"cooked_hygrophorus_goetzii.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(8),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
@@ -1954,6 +2107,9 @@ minetest.register_node("nsspf:plectania_nannfeldtii", {
 	tiles = {"plectania_nannfeldtii.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
@@ -1973,6 +2129,9 @@ minetest.register_node("nsspf:cooked_plectania_nannfeldtii", {
 	tiles = {"cooked_plectania_nannfeldtii.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-20),
+	on_place = function(itemstack, placer, pointed_thing)
+		return
+	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
@@ -2105,7 +2264,7 @@ function nsspf_register_snowbankfungi (name, descr, int, ch, spread)
 			end
 		end
 	})
-	
+
 end
 
 nsspf_register_snowbankfungi ('plectania_nannfeldtii','Plectania nannfeldtii', 18, 10, 8)
@@ -2174,13 +2333,13 @@ if minetest.get_modpath("nssm") then
 		description = 'Long Lasting Amadou',
 		image = "long_lasting_amadou.png",
 	})
-	
+
 	minetest.register_craft({
 		output = 'nsspf:long_lasting_amadou',
 		type = "shapeless",
 		recipe = {'nssm:black_powder', 'nsspf:amadou'},
 	})
-	
+
 	minetest.register_craft({
 		type = "fuel",
 		recipe = "nsspf:long_lasting_amadou",
@@ -2201,7 +2360,7 @@ if minetest.get_modpath("tnt") then
 		type = "shapeless",
 		recipe = {'tnt:gunpowder', 'nsspf:amadou'},
 	})
-	
+
 	minetest.register_craft({
 		type = "fuel",
 		recipe = "nsspf:lasting_amadou",
