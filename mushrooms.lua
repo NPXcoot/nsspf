@@ -56,11 +56,11 @@ minetest.register_node("nsspf:boletus_edulis_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:boletus_edulis_spores" 1'},
-                 rarity = 20
+                 rarity = 16
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:cantharellus_cibarius", {
@@ -121,11 +121,11 @@ minetest.register_node("nsspf:cantharellus_cibarius_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:cantharellus_cibarius_spores" 1'},
-                 rarity = 15
+                 rarity = 12
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:suillus_grevillei", {
@@ -190,7 +190,7 @@ minetest.register_node("nsspf:suillus_grevillei_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:morchella_conica", {
@@ -251,11 +251,11 @@ minetest.register_node("nsspf:morchella_conica_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:morchella_conica_spores" 1'},
-                 rarity = 14
+                 rarity = 12
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:russula_xerampelina", {
@@ -320,7 +320,7 @@ minetest.register_node("nsspf:russula_xerampelina_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:boletus_pinophilus", {
@@ -384,11 +384,11 @@ minetest.register_node("nsspf:boletus_pinophilus_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:boletus_pinophilus_spores" 1'},
-                 rarity = 20
+                 rarity = 16
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:boletus_satanas", {
@@ -449,11 +449,11 @@ minetest.register_node("nsspf:boletus_satanas_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:boletus_satanas_spores" 1'},
-                 rarity = 20
+                 rarity = 18
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:amanita_phalloides", {
@@ -518,7 +518,7 @@ minetest.register_node("nsspf:amanita_muscaria_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:amanita_muscaria", {
@@ -583,7 +583,7 @@ minetest.register_node("nsspf:amanita_phalloides_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:tuber_melanosporum_fungusdirt", {
@@ -597,11 +597,11 @@ minetest.register_node("nsspf:tuber_melanosporum_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:tuber_melanosporum_spores" 1'},
-                 rarity = 20
+                 rarity = 16
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:tuber_magnatum_pico_fungusdirt", {
@@ -619,7 +619,7 @@ minetest.register_node("nsspf:tuber_magnatum_pico_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:tuber_borchii_fungusdirt", {
@@ -633,11 +633,11 @@ minetest.register_node("nsspf:tuber_borchii_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:tuber_borchii_spores" 1'},
-                 rarity = 10
+                 rarity = 12
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:terfezia_arenaria_fungusdirt", {
@@ -651,11 +651,11 @@ minetest.register_node("nsspf:terfezia_arenaria_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:terfezia_arenaria_spores" 1'},
-                 rarity = 10
+                 rarity = 8
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 --Saprotrophic fungi that live on trees
@@ -985,11 +985,11 @@ minetest.register_node("nsspf:macrolepiota_procera_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:macrolepiota_procera_spores" 1'},
-                 rarity = 21
+                 rarity = 12
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:psilocybe_cubensis", {
@@ -1050,11 +1050,11 @@ minetest.register_node("nsspf:psilocybe_cubensis_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:psilocybe_cubensis_spores" 1'},
-                 rarity = 9
+                 rarity = 16
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:lycoperdon_pyriforme", {
@@ -1115,11 +1115,11 @@ minetest.register_node("nsspf:lycoperdon_pyriforme_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:lycoperdon_pyriforme_spores" 1'},
-                 rarity = 5
+                 rarity = 4
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:gyromitra_esculenta", {
@@ -1184,7 +1184,7 @@ minetest.register_node("nsspf:gyromitra_esculenta_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:coprinus_atramentarius", {
@@ -1249,7 +1249,7 @@ minetest.register_node("nsspf:coprinus_atramentarius_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 --jungle fungi
@@ -1502,11 +1502,11 @@ minetest.register_node("nsspf:clitocybe_glacialis_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:clitocybe_glacialis_spores" 1'},
-                 rarity = 30
+                 rarity = 16
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:hygrophorus_goetzii", {
@@ -1567,11 +1567,11 @@ minetest.register_node("nsspf:hygrophorus_goetzii_fungusdirt", {
          items = {
 			{
                  items = {'node "nsspf:hygrophorus_goetzii_spores" 1'},
-                 rarity = 20
+                 rarity = 14
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 minetest.register_node("nsspf:plectania_nannfeldtii", {
@@ -1636,7 +1636,7 @@ minetest.register_node("nsspf:plectania_nannfeldtii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, not_in_creative_inventory =1},
 })
 
 function nsspf_register_recipes (name)

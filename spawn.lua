@@ -33,7 +33,7 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch, spread)
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
 		tiles = {"mycorrhizalmycelium.png"},
-		groups = {crumbly = 2},
+		groups = {crumbly = 2, not_in_creative_inventory =1},
 	})
 
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
@@ -171,7 +171,7 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 	minetest.register_node("nsspf:"..name.."_tuber_mycelium", {
 		description = descr,
 		tiles = {"tuber_mycelium.png"},
-		groups = {crumbly = 2},
+		groups = {crumbly = 2, not_in_creative_inventory =1},
 	})
 
 	minetest.register_abm({
@@ -196,7 +196,7 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_tuber_mycelium"})
 		end
 	})
---[[
+
 	minetest.register_abm({
 		nodenames = {"nsspf:"..name.."_tuber_mycelium"},
 		neighbors = {"air","default:water_source"},
@@ -208,12 +208,12 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 			minetest.get_node_timer(pos):start(300)
 		end
 	})
-]]
+
 	minetest.register_node("nsspf:"..name.."_fruit", {
 		description = descr.." Truffle",
 		tiles = {"default_dirt.png"},
 		drop = "nsspf:"..name,
-		groups = {crumbly = 3},
+		groups = {crumbly = 3, not_in_creative_inventory =1},
 	})
 
 	minetest.register_abm({
@@ -370,7 +370,7 @@ function nsspf_register_saprotrophicground (name, descr, int, ch, spread)
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
 		tiles = {"saprotrophic_mycelium.png"},
-		groups = {crumbly = 2},
+		groups = {crumbly = 2, not_in_creative_inventory =1},
 	})
 
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
@@ -526,7 +526,7 @@ function nsspf_register_snowbankfungi (name, descr, int, ch, spread)
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
 		tiles = {"snowbank_mycelium.png"},
-		groups = {crumbly = 2},
+		groups = {crumbly = 2, not_in_creative_inventory =1},
 	})
 
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
