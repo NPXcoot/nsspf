@@ -1318,11 +1318,11 @@ minetest.register_node("nsspf:ganoderma_lucidum", {
 	end,
 	selection_box = {
       type = 'fixed',
-      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
    collision_box = {
       type = 'fixed',
-      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
 
@@ -1340,11 +1340,11 @@ minetest.register_node("nsspf:cooked_ganoderma_lucidum", {
 	end,
 	selection_box = {
       type = 'fixed',
-      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
    collision_box = {
       type = 'fixed',
-      fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
+      fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
 

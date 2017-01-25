@@ -318,8 +318,8 @@ nssbf_register_saprotrophicontrees ('panellus_pusillus', 'Panellus pusillus', 'd
 nssbf_register_saprotrophicontrees ('fomes_fomentarius', 'Fomes fomentarius', 'default:aspen_tree', 13, 18)
 nssbf_register_saprotrophicontrees ('fistulina_hepatica', 'Fistulina hepatica', 'default:pine_tree', 16, 24)
 nssbf_register_saprotrophicontrees ('mycena_chlorophos', 'Mycena clorophos', 'default:dirt', 30, 50)
-nssbf_register_saprotrophicontrees ('clitocybula_azurea', 'Clitocybula azurea', 'default:jungletree', 12, 30)
-nssbf_register_saprotrophicontrees ('ganoderma_lucidum', 'Ganoderma lucidum', 'default:jungletree', 14, 30)
+nssbf_register_saprotrophicontrees ('clitocybula_azurea', 'Clitocybula azurea', 'default:jungletree', 12, 28)
+nssbf_register_saprotrophicontrees ('ganoderma_lucidum', 'Ganoderma lucidum', 'default:jungletree', 14, 28)
 
 
 local OPEN_TIME_START = 0.2
@@ -481,7 +481,7 @@ minetest.register_abm({
 	nodenames = {"default:jungletree"},
 	neighbors = {"air"},
 	interval = 180.0,
-	chance = 700,
+	chance = 600,
 	action = function(pos, node)
 		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
 		local n = minetest.env:get_node(pos1).name
@@ -497,7 +497,7 @@ minetest.register_abm({
 	nodenames = {"default:jungletree"},
 	neighbors = {"air"},
 	interval = 180.0,
-	chance = 500,
+	chance = 450,
 	action = function(pos, node)
 		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
 		local n = minetest.env:get_node(pos1).name
