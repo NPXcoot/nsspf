@@ -791,9 +791,6 @@ minetest.register_node("nsspf:mycena_chlorophos", {
 	tiles = {"mycena_chlorophos.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-2),
-	on_place = function(itemstack, placer, pointed_thing)
-		return
-	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -836,8 +833,9 @@ minetest.register_node("nsspf:mycena_chlorophos_light", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"mycena_chlorophos_light.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, not_in_creative_inventory=1},
 	light_source = 8,
+	drop ="nsspf:mycena_chlorophos",
 	on_use = minetest.item_eat(-2),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -864,9 +862,6 @@ minetest.register_node("nsspf:panellus_pusillus", {
 	tiles = {"panellus_pusillus.png"},
 	groups = {snappy=3},
 	on_use = minetest.item_eat(-2),
-	on_place = function(itemstack, placer, pointed_thing)
-		return
-	end,
 	selection_box = {
       type = 'fixed',
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
@@ -909,8 +904,9 @@ minetest.register_node("nsspf:panellus_pusillus_light", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"panellus_pusillus_light.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, not_in_creative_inventory=1},
 	light_source = 8,
+	drop = "nsspf:panellus_pusillus",
 	on_use = minetest.item_eat(-2),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1684,7 +1680,7 @@ nsspf_register_recipes ('clitocybula_azurea')
 	})
 
 minetest.register_craftitem("nsspf:amadou", {
-	description = descr,
+	description = "Amadou",
 	image = "amadou.png",
 })
 
@@ -1718,7 +1714,7 @@ end
 if minetest.get_modpath("tnt") then
 
 	minetest.register_craftitem("nsspf:lasting_amadou", {
-		description = 'Lasting amadou',
+		description = 'Lasting Amadou',
 		image = "lasting_amadou.png",
 	})
 
