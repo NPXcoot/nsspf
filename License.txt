@@ -1,2 +1,2 @@
-License for the code: LGPL
+License for the code: LGPLv2.1 or later
 License for all the models, textures and sound: CC BY-SA 4.0
