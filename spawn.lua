@@ -626,7 +626,7 @@ nsspf_register_snowbankfungi ('plectania_nannfeldtii','Plectania nannfeldtii', 1
 nsspf_register_snowbankfungi ('hygrophorus_goetzii','Hygrophorus goetzii', 16, 10, 6)
 nsspf_register_snowbankfungi ('clitocybe_glacialis','Clitocybe glacialis', 15, 10, 6)
 
-if minetest.q:get('nsspf.allow_default_mushrooms') ~= 'true' then
+if minetest.settings:get('nsspf.allow_default_mushrooms') ~= 'true' then
 	minetest.register_abm({
 		nodenames = {"flowers:mushroom_red"},
 		interval = 1,
