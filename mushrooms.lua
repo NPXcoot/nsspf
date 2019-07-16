@@ -1,3 +1,5 @@
+local tubelib = minetest.global_exists('tubelib_addons1')
+
 minetest.register_node("nsspf:boletus_edulis", {
 	description = "Boletus edulis",
 	drawtype = "mesh",
@@ -22,6 +24,7 @@ minetest.register_node("nsspf:boletus_edulis", {
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:boletus_edulis") end
 
 minetest.register_node("nsspf:cooked_boletus_edulis", {
 	description = "Cooked Boletus edulis",
@@ -60,8 +63,9 @@ minetest.register_node("nsspf:boletus_edulis_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:boletus_edulis_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:cantharellus_cibarius", {
 	description = "Cantharellus cibarius",
@@ -87,6 +91,7 @@ minetest.register_node("nsspf:cantharellus_cibarius", {
       fixed = {-0.28, -0.49, -0.28, 0.28, -0.26, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:cantharellus_cibarius") end
 
 minetest.register_node("nsspf:cooked_cantharellus_cibarius", {
 	description = "Cooked Cantharellus cibarius",
@@ -125,8 +130,9 @@ minetest.register_node("nsspf:cantharellus_cibarius_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:cantharellus_cibarius_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:suillus_grevillei", {
 	description = "Suillus grevillei",
@@ -152,6 +158,7 @@ minetest.register_node("nsspf:suillus_grevillei", {
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:suillus_grevillei") end
 
 minetest.register_node("nsspf:cooked_suillus_grevillei", {
 	description = "Cooked Suillus grevillei",
@@ -190,8 +197,9 @@ minetest.register_node("nsspf:suillus_grevillei_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:suillus_grevillei_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:morchella_conica", {
 	description = "Morchella conica",
@@ -217,6 +225,7 @@ minetest.register_node("nsspf:morchella_conica", {
       fixed = {-0.15, -0.49, -0.15, 0.15, 0.06, 0.15}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:morchella_conica") end
 
 minetest.register_node("nsspf:cooked_morchella_conica", {
 	description = "Cooked Morchella conica",
@@ -255,8 +264,9 @@ minetest.register_node("nsspf:morchella_conica_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:morchella_conica_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:russula_xerampelina", {
 	description = "Russula xerampelina",
@@ -282,6 +292,7 @@ minetest.register_node("nsspf:russula_xerampelina", {
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:russula_xerampelina") end
 
 minetest.register_node("nsspf:cooked_russula_xerampelina", {
 	description = "Cooked Russula xerampelina",
@@ -320,8 +331,9 @@ minetest.register_node("nsspf:russula_xerampelina_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:russula_xerampelina_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:boletus_pinophilus", {
 	description = "Boletus pinophilus",
@@ -347,6 +359,7 @@ minetest.register_node("nsspf:boletus_pinophilus", {
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:boletus_pinophilus") end
 
 minetest.register_node("nsspf:cooked_boletus_pinophilus", {
 	description = "Cooked Boletus pinophilus",
@@ -388,8 +401,9 @@ minetest.register_node("nsspf:boletus_pinophilus_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:boletus_pinophilus_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:boletus_satanas", {
 	description = "Boletus satanas",
@@ -415,6 +429,7 @@ minetest.register_node("nsspf:boletus_satanas", {
       fixed = {-0.28, -0.49, -0.28, 0.28, 0.06, 0.28}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:boletus_satanas") end
 
 minetest.register_node("nsspf:cooked_boletus_satanas", {
 	description = "Cooked Boletus satanas",
@@ -453,8 +468,9 @@ minetest.register_node("nsspf:boletus_satanas_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:boletus_satanas_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:amanita_phalloides", {
 	description = "Amanita phalloides",
@@ -480,6 +496,7 @@ minetest.register_node("nsspf:amanita_phalloides", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:amanita_phalloides") end
 
 minetest.register_node("nsspf:cooked_amanita_phalloides", {
 	description = "Cooked Amanita phalloides",
@@ -518,8 +535,9 @@ minetest.register_node("nsspf:amanita_muscaria_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:amanita_muscaria_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:amanita_muscaria", {
 	description = "Amanita muscaria",
@@ -545,6 +563,7 @@ minetest.register_node("nsspf:amanita_muscaria", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:amanita_muscaria") end
 
 minetest.register_node("nsspf:cooked_amanita_muscaria", {
 	description = "Cooked Amanita muscaria",
@@ -583,8 +602,9 @@ minetest.register_node("nsspf:amanita_phalloides_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:amanita_phalloides_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:tuber_melanosporum_fungusdirt", {
 	description = "Tuber melanosporum Dirt",
@@ -601,8 +621,9 @@ minetest.register_node("nsspf:tuber_melanosporum_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:tuber_melanosporum_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:tuber_magnatum_pico_fungusdirt", {
 	description = "Tuber magnatum pico Dirt",
@@ -619,8 +640,9 @@ minetest.register_node("nsspf:tuber_magnatum_pico_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:tuber_magnatum_pico_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:tuber_borchii_fungusdirt", {
 	description = "Tuber borchii Dirt",
@@ -637,8 +659,9 @@ minetest.register_node("nsspf:tuber_borchii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:tuber_borchii_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:terfezia_arenaria_fungusdirt", {
 	description = "Terfezia arenaria Dirt",
@@ -655,8 +678,9 @@ minetest.register_node("nsspf:terfezia_arenaria_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:terfezia_arenaria_fungusdirt", "default:dirt") end
 
 --Saprotrophic fungi that live on trees
 
@@ -684,6 +708,7 @@ minetest.register_node("nsspf:fistulina_hepatica", {
       fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:fistulina_hepatica") end
 
 minetest.register_node("nsspf:cooked_fistulina_hepatica", {
 	description = "Cooked Fistulina hepatica",
@@ -731,6 +756,7 @@ minetest.register_node("nsspf:armillaria_mellea", {
       fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:armillaria_mellea") end
 
 minetest.register_node("nsspf:fomes_fomentarius", {
 	description = "Fomes fomentarius",
@@ -756,6 +782,7 @@ minetest.register_node("nsspf:fomes_fomentarius", {
       fixed = {-0.2, 0, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:fomes_fomentarius") end
 
 minetest.register_node("nsspf:cooked_armillaria_mellea", {
 	description = "Cooked Armillaria mellea",
@@ -800,6 +827,7 @@ minetest.register_node("nsspf:mycena_chlorophos", {
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:mycena_chlorophos") end
 
 minetest.register_node("nsspf:cooked_mycena_chlorophos", {
 	description = "Cooked Mycena chlorophos",
@@ -849,6 +877,7 @@ minetest.register_node("nsspf:mycena_chlorophos_light", {
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:mycena_chlorophos_light") end
 
 minetest.register_node("nsspf:panellus_pusillus", {
 	description = "Panellus pusillus",
@@ -871,6 +900,7 @@ minetest.register_node("nsspf:panellus_pusillus", {
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:panellus_pusillus") end
 
 minetest.register_node("nsspf:cooked_panellus_pusillus", {
 	description = "Cooked Panellus pusillus",
@@ -920,6 +950,7 @@ minetest.register_node("nsspf:panellus_pusillus_light", {
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:panellus_pusillus_light") end
 
 --Saprotrophic fungi that grow on the ground
 
@@ -947,6 +978,7 @@ minetest.register_node("nsspf:macrolepiota_procera", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:macrolepiota_procera") end
 
 minetest.register_node("nsspf:cooked_macrolepiota_procera", {
 	description = "Cooked Macrolepiota procera",
@@ -985,8 +1017,9 @@ minetest.register_node("nsspf:macrolepiota_procera_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:macrolepiota_procera_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:psilocybe_cubensis", {
 	description = "Psilocybe cubensis",
@@ -1012,6 +1045,7 @@ minetest.register_node("nsspf:psilocybe_cubensis", {
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:psilocybe_cubensis") end
 
 minetest.register_node("nsspf:cooked_psilocybe_cubensis", {
 	description = "Cooked Psilocybe cubensis",
@@ -1050,8 +1084,9 @@ minetest.register_node("nsspf:psilocybe_cubensis_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:psilocybe_cubensis_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:lycoperdon_pyriforme", {
 	description = "Lycoperdon pyriforme",
@@ -1077,6 +1112,7 @@ minetest.register_node("nsspf:lycoperdon_pyriforme", {
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:lycoperdon_pyriforme") end
 
 minetest.register_node("nsspf:cooked_lycoperdon_pyriforme", {
 	description = "Cooked Lycoperdon pyriforme",
@@ -1115,8 +1151,9 @@ minetest.register_node("nsspf:lycoperdon_pyriforme_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:lycoperdon_pyriforme_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:gyromitra_esculenta", {
 	description = "Gyromitra esculenta",
@@ -1142,6 +1179,7 @@ minetest.register_node("nsspf:gyromitra_esculenta", {
       fixed = {-0.05, -0.49, -0.05, 0.05, -0.2, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:gyromitra_esculenta") end
 
 minetest.register_node("nsspf:cooked_gyromitra_esculenta", {
 	description = "Cooked Gyromitra esculenta",
@@ -1180,8 +1218,9 @@ minetest.register_node("nsspf:gyromitra_esculenta_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:gyromitra_esculenta_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:coprinus_atramentarius", {
 	description = "Coprinus atramentarius",
@@ -1207,6 +1246,7 @@ minetest.register_node("nsspf:coprinus_atramentarius", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:coprinus_atramentarius") end
 
 minetest.register_node("nsspf:cooked_coprinus_atramentarius", {
 	description = "Cooked Coprinus atramentarius",
@@ -1245,8 +1285,9 @@ minetest.register_node("nsspf:coprinus_atramentarius_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:coprinus_atramentarius_fungusdirt", "default:dirt") end
 
 --jungle fungi
 
@@ -1274,6 +1315,7 @@ minetest.register_node("nsspf:lentinus_strigosus", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:lentinus_strigosus") end
 
 minetest.register_node("nsspf:cooked_lentinus_strigosus", {
 	description = "Cooked Lentinus strigosus",
@@ -1321,6 +1363,7 @@ minetest.register_node("nsspf:ganoderma_lucidum", {
       fixed = {-0.5, -0.1, -0.5, 0.5, 0.1, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:ganoderma_lucidum") end
 
 minetest.register_node("nsspf:cooked_ganoderma_lucidum", {
 	description = "Cooked Ganoderma lucidum",
@@ -1368,6 +1411,7 @@ minetest.register_node("nsspf:marasmius_haematocephalus", {
       fixed = {-0.1, -0.49, -0.1, 0.1, -0.1, 0.1}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:marasmius_haematocephalus") end
 
 minetest.register_node("nsspf:cooked_marasmius_haematocephalus", {
 	description = "Cooked Marasmius haematocephalus",
@@ -1415,6 +1459,7 @@ minetest.register_node("nsspf:clitocybula_azurea", {
       fixed = {-0.2, -0.4, 0.2, 0.2, 0.4, 0.5}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:clitocybula_azurea") end
 
 minetest.register_node("nsspf:cooked_clitocybula_azurea", {
 	description = "Cooked Clitocybula_azurea",
@@ -1464,6 +1509,7 @@ minetest.register_node("nsspf:clitocybe_glacialis", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:clitocybe_glacialis") end
 
 minetest.register_node("nsspf:cooked_clitocybe_glacialis", {
 	description = "Cooked Clitocybe glacialis",
@@ -1502,8 +1548,9 @@ minetest.register_node("nsspf:clitocybe_glacialis_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:clitocybe_glacialis_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:hygrophorus_goetzii", {
 	description = "Hygrophorus goetzii",
@@ -1529,6 +1576,7 @@ minetest.register_node("nsspf:hygrophorus_goetzii", {
       fixed = {-0.05, -0.49, -0.05, 0.05, 0, 0.05}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:hygrophorus_goetzii") end
 
 minetest.register_node("nsspf:cooked_hygrophorus_goetzii", {
 	description = "Cooked Hygrophorus goetzii",
@@ -1567,8 +1615,9 @@ minetest.register_node("nsspf:hygrophorus_goetzii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:hygrophorus_goetzii_fungusdirt", "default:dirt") end
 
 minetest.register_node("nsspf:plectania_nannfeldtii", {
 	description = "Plectania nannfeldtii",
@@ -1594,6 +1643,7 @@ minetest.register_node("nsspf:plectania_nannfeldtii", {
       fixed = {-0.3, -0.49, -0.3, 0.3, -0.3, 0.3}, -- Right, Bottom, Back, Left, Top, Front
       },
 })
+if tubelib then tubelib_addons1.register_flower("nsspf:plectania_nannfeldtii") end
 
 minetest.register_node("nsspf:cooked_plectania_nannfeldtii", {
 	description = "Cooked Plectania nannfeldtii",
@@ -1632,8 +1682,9 @@ minetest.register_node("nsspf:plectania_nannfeldtii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory =1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 })
+if tubelib then tubelib_addons1.register_ground_node("nsspf:plectania_nannfeldtii_fungusdirt", "default:dirt") end
 
 function nsspf_register_recipes (name)
 

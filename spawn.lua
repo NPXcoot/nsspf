@@ -1,3 +1,5 @@
+local tubelib = minetest.global_exists('tubelib_addons1')
+
 function place_spore(itemstack, placer, pointed_thing, name, topoint, soilblock)
 
 	local pt = pointed_thing
@@ -33,8 +35,9 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch, spread)
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
 		tiles = {"mycorrhizalmycelium.png"},
-		groups = {crumbly = 2, not_in_creative_inventory =1},
+		groups = {crumbly = 2, not_in_creative_inventory = 1, soil = 1},
 	})
+	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_mycelium", "default:dirt") end
 
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
@@ -171,8 +174,9 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 	minetest.register_node("nsspf:"..name.."_tuber_mycelium", {
 		description = descr,
 		tiles = {"tuber_mycelium.png"},
-		groups = {crumbly = 2, not_in_creative_inventory =1},
+		groups = {crumbly = 2, not_in_creative_inventory = 1, soil = 1},
 	})
+	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_tuber_mycelium", "default:dirt") end
 
 	minetest.register_abm({
 		nodenames = {"default:dirt"},
@@ -213,8 +217,9 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 		description = descr.." Truffle",
 		tiles = {"default_dirt.png"},
 		drop = "nsspf:"..name,
-		groups = {crumbly = 3, not_in_creative_inventory =1},
+		groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
 	})
+	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_fruit", "default:dirt") end
 
 	minetest.register_abm({
 		nodenames = {"default:dirt"},
@@ -370,8 +375,9 @@ function nsspf_register_saprotrophicground (name, descr, int, ch, spread)
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
 		tiles = {"saprotrophic_mycelium.png"},
-		groups = {crumbly = 2, not_in_creative_inventory =1},
+		groups = {crumbly = 2, not_in_creative_inventory = 1, soil = 1},
 	})
+	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_mycelium", "default:dirt") end
 
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
@@ -526,8 +532,9 @@ function nsspf_register_snowbankfungi (name, descr, int, ch, spread)
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
 		tiles = {"snowbank_mycelium.png"},
-		groups = {crumbly = 2, not_in_creative_inventory =1},
+		groups = {crumbly = 2, not_in_creative_inventory = 1, soil = 1},
 	})
+	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_mycelium", "default:dirt") end
 
 	minetest.register_craftitem("nsspf:"..name.."_spores", {
 		description = descr.." Spores",
@@ -619,6 +626,7 @@ nsspf_register_snowbankfungi ('plectania_nannfeldtii','Plectania nannfeldtii', 1
 nsspf_register_snowbankfungi ('hygrophorus_goetzii','Hygrophorus goetzii', 16, 10, 6)
 nsspf_register_snowbankfungi ('clitocybe_glacialis','Clitocybe glacialis', 15, 10, 6)
 
+if minetest.q:get('nsspf.allow_default_mushrooms') ~= 'true' then
 	minetest.register_abm({
 		nodenames = {"flowers:mushroom_red"},
 		interval = 1,
@@ -636,3 +644,4 @@ nsspf_register_snowbankfungi ('clitocybe_glacialis','Clitocybe glacialis', 15, 1
 			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "air"})
 		end
 	})
+end
