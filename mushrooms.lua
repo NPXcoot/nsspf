@@ -7,7 +7,7 @@ minetest.register_node("nsspf:boletus_edulis", {
     paramtype = 'light',
     paramtype2 = 'facedir',
 	tiles = {"boletus_edulis.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
@@ -63,7 +63,7 @@ minetest.register_node("nsspf:boletus_edulis_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:boletus_edulis_fungusdirt", "default:dirt") end
 
@@ -80,7 +80,7 @@ minetest.register_node("nsspf:cantharellus_cibarius", {
 		return
 	end,
 	tiles = {"cantharellus_cibarius.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(1),
 	selection_box = {
       type = 'fixed',
@@ -130,7 +130,7 @@ minetest.register_node("nsspf:cantharellus_cibarius_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:cantharellus_cibarius_fungusdirt", "default:dirt") end
 
@@ -144,7 +144,7 @@ minetest.register_node("nsspf:suillus_grevillei", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"suillus_grevillei.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(1),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -197,7 +197,7 @@ minetest.register_node("nsspf:suillus_grevillei_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:suillus_grevillei_fungusdirt", "default:dirt") end
 
@@ -211,7 +211,7 @@ minetest.register_node("nsspf:morchella_conica", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"morchella_conica.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(2),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -264,7 +264,7 @@ minetest.register_node("nsspf:morchella_conica_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:morchella_conica_fungusdirt", "default:dirt") end
 
@@ -278,7 +278,7 @@ minetest.register_node("nsspf:russula_xerampelina", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"russula_xerampelina.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-8),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -331,7 +331,7 @@ minetest.register_node("nsspf:russula_xerampelina_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:russula_xerampelina_fungusdirt", "default:dirt") end
 
@@ -345,7 +345,7 @@ minetest.register_node("nsspf:boletus_pinophilus", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"boletus_pinophilus.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(2),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -401,7 +401,7 @@ minetest.register_node("nsspf:boletus_pinophilus_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:boletus_pinophilus_fungusdirt", "default:dirt") end
 
@@ -415,7 +415,7 @@ minetest.register_node("nsspf:boletus_satanas", {
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-20),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -468,7 +468,7 @@ minetest.register_node("nsspf:boletus_satanas_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:boletus_satanas_fungusdirt", "default:dirt") end
 
@@ -482,7 +482,7 @@ minetest.register_node("nsspf:amanita_phalloides", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"amanita_phalloides.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-20),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -535,7 +535,7 @@ minetest.register_node("nsspf:amanita_muscaria_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:amanita_muscaria_fungusdirt", "default:dirt") end
 
@@ -549,7 +549,7 @@ minetest.register_node("nsspf:amanita_muscaria", {
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-20),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -602,7 +602,7 @@ minetest.register_node("nsspf:amanita_phalloides_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:amanita_phalloides_fungusdirt", "default:dirt") end
 
@@ -621,7 +621,7 @@ minetest.register_node("nsspf:tuber_melanosporum_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:tuber_melanosporum_fungusdirt", "default:dirt") end
 
@@ -640,7 +640,7 @@ minetest.register_node("nsspf:tuber_magnatum_pico_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:tuber_magnatum_pico_fungusdirt", "default:dirt") end
 
@@ -659,7 +659,7 @@ minetest.register_node("nsspf:tuber_borchii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:tuber_borchii_fungusdirt", "default:dirt") end
 
@@ -678,7 +678,7 @@ minetest.register_node("nsspf:terfezia_arenaria_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:terfezia_arenaria_fungusdirt", "default:dirt") end
 
@@ -694,7 +694,7 @@ minetest.register_node("nsspf:fistulina_hepatica", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"fistulina_hepatica.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(4),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -742,7 +742,7 @@ minetest.register_node("nsspf:armillaria_mellea", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"armillaria_mellea.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(2),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -768,7 +768,7 @@ minetest.register_node("nsspf:fomes_fomentarius", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"fomes_fomentarius.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-1),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -816,7 +816,7 @@ minetest.register_node("nsspf:mycena_chlorophos", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"mycena_chlorophos.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-2),
 	selection_box = {
       type = 'fixed',
@@ -861,7 +861,7 @@ minetest.register_node("nsspf:mycena_chlorophos_light", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"mycena_chlorophos_light.png"},
-	groups = {snappy=3, not_in_creative_inventory=1},
+	groups = {snappy=3, not_in_creative_inventory=1, nsspf_mushroom=1},
 	light_source = 8,
 	drop ="nsspf:mycena_chlorophos",
 	on_use = minetest.item_eat(-2),
@@ -889,7 +889,7 @@ minetest.register_node("nsspf:panellus_pusillus", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"panellus_pusillus.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-2),
 	selection_box = {
       type = 'fixed',
@@ -934,7 +934,7 @@ minetest.register_node("nsspf:panellus_pusillus_light", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"panellus_pusillus_light.png"},
-	groups = {snappy=3, not_in_creative_inventory=1},
+	groups = {snappy=3, not_in_creative_inventory=1, nsspf_mushroom=1},
 	light_source = 8,
 	drop = "nsspf:panellus_pusillus",
 	on_use = minetest.item_eat(-2),
@@ -964,7 +964,7 @@ minetest.register_node("nsspf:macrolepiota_procera", {
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(3),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1017,7 +1017,7 @@ minetest.register_node("nsspf:macrolepiota_procera_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:macrolepiota_procera_fungusdirt", "default:dirt") end
 
@@ -1031,7 +1031,7 @@ minetest.register_node("nsspf:psilocybe_cubensis", {
 	on_timer = function(pos, elapsed)
 		minetest.set_node(pos, {name="air"})
 	end,
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-7),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1084,7 +1084,7 @@ minetest.register_node("nsspf:psilocybe_cubensis_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:psilocybe_cubensis_fungusdirt", "default:dirt") end
 
@@ -1098,7 +1098,7 @@ minetest.register_node("nsspf:lycoperdon_pyriforme", {
     paramtype = 'light',
     paramtype2 = 'facedir',
 	tiles = {"lycoperdon_pyriforme.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(8),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1151,7 +1151,7 @@ minetest.register_node("nsspf:lycoperdon_pyriforme_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:lycoperdon_pyriforme_fungusdirt", "default:dirt") end
 
@@ -1165,7 +1165,7 @@ minetest.register_node("nsspf:gyromitra_esculenta", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"gyromitra_esculenta.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-20),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1218,7 +1218,7 @@ minetest.register_node("nsspf:gyromitra_esculenta_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:gyromitra_esculenta_fungusdirt", "default:dirt") end
 
@@ -1232,7 +1232,7 @@ minetest.register_node("nsspf:coprinus_atramentarius", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"coprinus_atramentarius.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-13),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1285,7 +1285,7 @@ minetest.register_node("nsspf:coprinus_atramentarius_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:coprinus_atramentarius_fungusdirt", "default:dirt") end
 
@@ -1301,7 +1301,7 @@ minetest.register_node("nsspf:lentinus_strigosus", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"lentinus_strigosus.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(1),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1349,7 +1349,7 @@ minetest.register_node("nsspf:ganoderma_lucidum", {
     paramtype = 'light',
     paramtype2 = 'facedir',
 	tiles = {"ganoderma_lucidum.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(14),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1397,7 +1397,7 @@ minetest.register_node("nsspf:marasmius_haematocephalus", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"marasmius_haematocephalus.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-1),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1445,7 +1445,7 @@ minetest.register_node("nsspf:clitocybula_azurea", {
 		minetest.set_node(pos, {name="air"})
 	end,
 	tiles = {"clitocybula_azurea.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-6),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1495,7 +1495,7 @@ minetest.register_node("nsspf:clitocybe_glacialis", {
     paramtype = 'light',
     paramtype2 = 'facedir',
 	tiles = {"clitocybe_glacialis.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(1),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1548,7 +1548,7 @@ minetest.register_node("nsspf:clitocybe_glacialis_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:clitocybe_glacialis_fungusdirt", "default:dirt") end
 
@@ -1562,7 +1562,7 @@ minetest.register_node("nsspf:hygrophorus_goetzii", {
     paramtype = 'light',
     paramtype2 = 'facedir',
 	tiles = {"hygrophorus_goetzii.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-4),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1615,7 +1615,7 @@ minetest.register_node("nsspf:hygrophorus_goetzii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:hygrophorus_goetzii_fungusdirt", "default:dirt") end
 
@@ -1629,7 +1629,7 @@ minetest.register_node("nsspf:plectania_nannfeldtii", {
 	end,
     paramtype2 = 'facedir',
 	tiles = {"plectania_nannfeldtii.png"},
-	groups = {snappy=3},
+	groups = {snappy=3, nsspf_mushroom=1},
 	on_use = minetest.item_eat(-20),
 	on_place = function(itemstack, placer, pointed_thing)
 		return
@@ -1682,7 +1682,7 @@ minetest.register_node("nsspf:plectania_nannfeldtii_fungusdirt", {
              },
 		}
 	},
-	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1},
+	groups = {crumbly = 3, not_in_creative_inventory = 1, soil = 1, nsspf_dirt=1},
 })
 if tubelib then tubelib_addons1.register_ground_node("nsspf:plectania_nannfeldtii_fungusdirt", "default:dirt") end
 

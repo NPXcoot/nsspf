@@ -47,112 +47,112 @@ function nsspf_register_mycorrhizalmycelium (name, descr, tree, int, ch, spread)
 		end,
 	})
 
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {tree},
-		interval = 30*int,
-		chance = 200*ch,
-		action = function(pos, node)
-			local flag = 0
-				for dx = -2,2 do
-					for dy = -2,1 do
-						for dz = -2,2 do
-							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local n = minetest.get_node(pos1).name
-							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
-								flag = 1
-								return
-							end
-						end
-					end
-				end
-			--if no other mycelium have been found:
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"air","default:water_source"},
-		interval = 1,
-		chance = 1,
-		action = function(pos, node)
-			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
-			minetest.get_node_timer(pos):start(300)
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"default:dirt_with_snow"},
-		interval = 1,
-		chance = 1,
-		action = function(pos, node)
-			minetest.set_node(pos, {name="default:dirt"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 12*int,
-		chance = 10*ch,
-		action = function(pos, node)
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"default:dirt_with_grass"},
-		interval = 5*int,
-		chance = 1*ch,
-		action = function(pos, node)
-			local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
-			local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
-			local n = minetest.get_node(pos1).name
-			local nn = minetest.get_node(pos2).name
-			if (n== "air" or n=="group:flora") and nn== "default:dirt_with_grass" then
-				minetest.set_node(pos1, {name = "nsspf:"..name})
-				minetest.get_node_timer(pos1):start(300)
-			end
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 10,
-		chance = 1,
-		action = function(pos, node)
-			local flag = 0
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local n = minetest.get_node(pos1).name
-							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
-								flag = flag+1
-							end
-						end
-					end
-				end
-			if flag > spread then
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local k = minetest.get_node(pos2).name
-								if k and string.match(k,"mycelium") then
-									minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
-									minetest.get_node_timer(pos2):start(300)
-								end
-						end
-					end
-				end
-			end
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {tree},
+	--	interval = 30*int,
+	--	chance = 200*ch,
+	--	action = function(pos, node)
+	--		local flag = 0
+	--			for dx = -2,2 do
+	--				for dy = -2,1 do
+	--					for dz = -2,2 do
+	--						local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local n = minetest.get_node(pos1).name
+	--						if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+	--							flag = 1
+	--							return
+	--						end
+	--					end
+	--				end
+	--			end
+	--		--if no other mycelium have been found:
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"air","default:water_source"},
+	--	interval = 1,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
+	--		minetest.get_node_timer(pos):start(300)
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"default:dirt_with_snow"},
+	--	interval = 1,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		minetest.set_node(pos, {name="default:dirt"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {"nsspf:"..name.."_mycelium"},
+	--	interval = 12*int,
+	--	chance = 10*ch,
+	--	action = function(pos, node)
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"default:dirt_with_grass"},
+	--	interval = 5*int,
+	--	chance = 1*ch,
+	--	action = function(pos, node)
+	--		local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
+	--		local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
+	--		local n = minetest.get_node(pos1).name
+	--		local nn = minetest.get_node(pos2).name
+	--		if (n== "air" or n=="group:flora") and nn== "default:dirt_with_grass" then
+	--			minetest.set_node(pos1, {name = "nsspf:"..name})
+	--			minetest.get_node_timer(pos1):start(300)
+	--		end
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"nsspf:"..name.."_mycelium"},
+	--	interval = 10,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		local flag = 0
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local n = minetest.get_node(pos1).name
+	--						if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+	--							flag = flag+1
+	--						end
+	--					end
+	--				end
+	--			end
+	--		if flag > spread then
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local k = minetest.get_node(pos2).name
+	--							if k and string.match(k,"mycelium") then
+	--								minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
+	--								minetest.get_node_timer(pos2):start(300)
+	--							end
+	--					end
+	--				end
+	--			end
+	--		end
+	--	end
+	--})
 
 end
 
@@ -178,40 +178,40 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 	})
 	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_tuber_mycelium", "default:dirt") end
 
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {tree},
-		interval = 30*int,
-		chance = 300*ch,
-		action = function(pos, node)
-			local flag = 0
-				for dx = -2,2 do
-					for dy = -2,1 do
-						for dz = -2,2 do
-							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local n = minetest.get_node(pos1).name
-							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
-								flag = 1
-								return
-							end
-						end
-					end
-				end
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_tuber_mycelium"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_tuber_mycelium"},
-		neighbors = {"air","default:water_source"},
-		interval = 1,
-		chance = 1,
-		action =
-		function(pos, node)
-			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
-			minetest.get_node_timer(pos):start(300)
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {tree},
+	--	interval = 30*int,
+	--	chance = 300*ch,
+	--	action = function(pos, node)
+	--		local flag = 0
+	--			for dx = -2,2 do
+	--				for dy = -2,1 do
+	--					for dz = -2,2 do
+	--						local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local n = minetest.get_node(pos1).name
+	--						if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+	--							flag = 1
+	--							return
+	--						end
+	--					end
+	--				end
+	--			end
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_tuber_mycelium"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_tuber_mycelium"},
+	--	neighbors = {"air","default:water_source"},
+	--	interval = 1,
+	--	chance = 1,
+	--	action =
+	--	function(pos, node)
+	--		minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
+	--		minetest.get_node_timer(pos):start(300)
+	--	end
+	--})
 
 	minetest.register_node("nsspf:"..name.."_fruit", {
 		description = descr.." Truffle",
@@ -221,15 +221,15 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 	})
 	if tubelib then tubelib_addons1.register_ground_node("nsspf:"..name.."_fruit", "default:dirt") end
 
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {"nsspf:"..name.."_tuber_mycelium"},
-		interval = 12*int,
-		chance = 6*ch,
-		action = function(pos, node)
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_tuber_mycelium"})
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {"nsspf:"..name.."_tuber_mycelium"},
+	--	interval = 12*int,
+	--	chance = 6*ch,
+	--	action = function(pos, node)
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_tuber_mycelium"})
+	--	end
+	--})
 
 	minetest.register_craftitem("nsspf:"..name, {
 		description = descr,
@@ -245,50 +245,50 @@ function nsspf_register_tuber (name, descr, tree, int, ch, gnam, spread)
 		end,
 	})
 
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {"nsspf:"..name.."_tuber_mycelium"},
-		interval = 12*int,
-		chance = 8*ch,
-		action = function(pos, node)
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_fruit"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_tuber_mycelium"},
-		neighbors = {"nsspf:"..name.."_tuber_mycelium"},
-		interval = 10,
-		chance = 1,
-		action = function(pos, node)
-			local flag = 0
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local n = minetest.get_node(pos1).name
-							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
-								flag = flag+1
-							end
-						end
-					end
-				end
-			if flag > spread then
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local k = minetest.get_node(pos2).name
-								if k and string.match(k,"mycelium") then
-									minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
-									minetest.get_node_timer(pos2):start(300)
-								end
-						end
-					end
-				end
-			end
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {"nsspf:"..name.."_tuber_mycelium"},
+	--	interval = 12*int,
+	--	chance = 8*ch,
+	--	action = function(pos, node)
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_fruit"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_tuber_mycelium"},
+	--	neighbors = {"nsspf:"..name.."_tuber_mycelium"},
+	--	interval = 10,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		local flag = 0
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local n = minetest.get_node(pos1).name
+	--						if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+	--							flag = flag+1
+	--						end
+	--					end
+	--				end
+	--			end
+	--		if flag > spread then
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local k = minetest.get_node(pos2).name
+	--							if k and string.match(k,"mycelium") then
+	--								minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
+	--								minetest.get_node_timer(pos2):start(300)
+	--							end
+	--					end
+	--				end
+	--			end
+	--		end
+	--	end
+	--})
 
 
 end
@@ -300,20 +300,20 @@ nsspf_register_tuber ("terfezia_arenaria","Terfezia arenaria","default:acacia_tr
 
 function nssbf_register_saprotrophicontrees (name, descr, tree, int, ch)
 
-minetest.register_abm({
-	nodenames = {tree},
-	neighbors = {"air"},
-	interval = 20*int,
-	chance = 40*ch,
-	action = function(pos, node)
-		local pos1 = {x=pos.x, y=pos.y, z=pos.z-1}
-		local n = minetest.get_node(pos1).name
-		if n == 'air' then
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z-1}, {name = "nsspf:"..name})
-			minetest.get_node_timer(pos):start(300)
-		end
-	end
-})
+--minetest.register_abm({
+--	nodenames = {tree},
+--	neighbors = {"air"},
+--	interval = 20*int,
+--	chance = 40*ch,
+--	action = function(pos, node)
+--		local pos1 = {x=pos.x, y=pos.y, z=pos.z-1}
+--		local n = minetest.get_node(pos1).name
+--		if n == 'air' then
+--			minetest.set_node({x = pos.x, y = pos.y, z = pos.z-1}, {name = "nsspf:"..name})
+--			minetest.get_node_timer(pos):start(300)
+--		end
+--	end
+--})
 
 
 end
@@ -339,15 +339,15 @@ set_fluo = function (pos)
 	end
 end
 
-minetest.register_abm({
-	nodenames = { "nsspf:mycena_chlorophos", "nsspf:mycena_chlorophos_light"},
-	interval = OPEN_CHECK,
-	chance = 1,
-
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		set_fluo(pos)
-	end
-})
+--minetest.register_abm({
+--	nodenames = { "nsspf:mycena_chlorophos", "nsspf:mycena_chlorophos_light"},
+--	interval = OPEN_CHECK,
+--	chance = 1,
+--
+--	action = function(pos, node, active_object_count, active_object_count_wider)
+--		set_fluo(pos)
+--	end
+--})
 
 set_fluor = function (pos)
 	if (minetest.get_node_light(pos, nil) < 10) and ((minetest.get_timeofday() < 19500) or (minetest.get_timeofday() > 5000)) then
@@ -357,15 +357,15 @@ set_fluor = function (pos)
 	end
 end
 
-minetest.register_abm({
-	nodenames = { "nsspf:panellus_pusillus", "nsspf:panellus_pusillus_light" },
-	interval = OPEN_CHECK,
-	chance = 1,
-
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		set_fluor(pos)
-	end
-})
+--minetest.register_abm({
+--	nodenames = { "nsspf:panellus_pusillus", "nsspf:panellus_pusillus_light" },
+--	interval = OPEN_CHECK,
+--	chance = 1,
+--
+--	action = function(pos, node, active_object_count, active_object_count_wider)
+--		set_fluor(pos)
+--	end
+--})
 
 
 --Saprotrophic fungi that grow on the ground
@@ -387,92 +387,92 @@ function nsspf_register_saprotrophicground (name, descr, int, ch, spread)
 		end,
 	})
 
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"default:dirt_with_grass"},
-		interval = 3*int,
-		chance = 1*ch,
-		action = function(pos, node)
-			local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
-			local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
-			local n = minetest.get_node(pos1).name
-			local nn = minetest.get_node(pos2).name
-			if (n== "air" or n=="group:flora") and nn== "default:dirt_with_grass" then
-				minetest.set_node(pos1, {name = "nsspf:"..name})
-				minetest.get_node_timer(pos1):start(300)
-			end
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"default:dirt_with_grass"},
+	--	interval = 3*int,
+	--	chance = 1*ch,
+	--	action = function(pos, node)
+	--		local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
+	--		local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
+	--		local n = minetest.get_node(pos1).name
+	--		local nn = minetest.get_node(pos2).name
+	--		if (n== "air" or n=="group:flora") and nn== "default:dirt_with_grass" then
+	--			minetest.set_node(pos1, {name = "nsspf:"..name})
+	--			minetest.get_node_timer(pos1):start(300)
+	--		end
+	--	end
+	--})
 
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 6*int,
-		chance = 7+ch,
-		action = function(pos, node)
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"default:dirt_with_grass"},
-		neighbors = {"air"},
-		interval = 18*int,
-		chance = 4500*ch,
-		action = function(pos, node)
-			local pos3 = {x=pos.x, y=pos.y-1, z=pos.z}
-			local n = minetest.get_node(pos3).name
-			if n== "default:dirt" then
-				minetest.set_node(pos3, {name = "nsspf:"..name.."_mycelium"})
-			end
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"air","default:water_source"},
-		interval = 1,
-		chance = 1,
-		action = function(pos, node)
-			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
-			minetest.get_node_timer(pos):start(300)
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 10,
-		chance = 1,
-		action = function(pos, node)
-			local flag = 0
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local n = minetest.get_node(pos1).name
-							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
-								flag = flag+1
-							end
-						end
-					end
-				end
-			if flag > spread then
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local k = minetest.get_node(pos2).name
-								if k and string.match(k,"mycelium") then
-									minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
-									minetest.get_node_timer(pos2):start(300)
-								end
-						end
-					end
-				end
-			end
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {"nsspf:"..name.."_mycelium"},
+	--	interval = 6*int,
+	--	chance = 7+ch,
+	--	action = function(pos, node)
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt_with_grass"},
+	--	neighbors = {"air"},
+	--	interval = 18*int,
+	--	chance = 4500*ch,
+	--	action = function(pos, node)
+	--		local pos3 = {x=pos.x, y=pos.y-1, z=pos.z}
+	--		local n = minetest.get_node(pos3).name
+	--		if n== "default:dirt" then
+	--			minetest.set_node(pos3, {name = "nsspf:"..name.."_mycelium"})
+	--		end
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"air","default:water_source"},
+	--	interval = 1,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
+	--		minetest.get_node_timer(pos):start(300)
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"nsspf:"..name.."_mycelium"},
+	--	interval = 10,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		local flag = 0
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local n = minetest.get_node(pos1).name
+	--						if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+	--							flag = flag+1
+	--						end
+	--					end
+	--				end
+	--			end
+	--		if flag > spread then
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local k = minetest.get_node(pos2).name
+	--							if k and string.match(k,"mycelium") then
+	--								minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
+	--								minetest.get_node_timer(pos2):start(300)
+	--							end
+	--					end
+	--				end
+	--			end
+	--		end
+	--	end
+	--})
 end
 
 nsspf_register_saprotrophicground ('macrolepiota_procera','Macrolepiota procera', 10, 12, 10)
@@ -483,51 +483,51 @@ nsspf_register_saprotrophicground ('gyromitra_esculenta','Gyromitra esculenta', 
 
 --jungle fungi
 
-minetest.register_abm({
-	nodenames = {"default:jungletree"},
-	neighbors = {"air"},
-	interval = 180.0,
-	chance = 600,
-	action = function(pos, node)
-		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
-		local n = minetest.env:get_node(pos1).name
-		if n == 'air' then
-			minetest.set_node({x = pos.x, y = pos.y+1, z = pos.z}, {name = "nsspf:marasmius_haematocephalus"})
-			minetest.get_node_timer(pos):start(300)
-		end
-	end
-})
-
-
-minetest.register_abm({
-	nodenames = {"default:jungletree"},
-	neighbors = {"air"},
-	interval = 180.0,
-	chance = 450,
-	action = function(pos, node)
-		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
-		local n = minetest.env:get_node(pos1).name
-		if n == 'air' then
-			minetest.set_node({x = pos.x, y = pos.y+1, z = pos.z}, {name = "nsspf:lentinus_strigosus"})
-			minetest.get_node_timer(pos):start(300)
-		end
-	end
-})
+--minetest.register_abm({
+--	nodenames = {"default:jungletree"},
+--	neighbors = {"air"},
+--	interval = 180.0,
+--	chance = 600,
+--	action = function(pos, node)
+--		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
+--		local n = minetest.env:get_node(pos1).name
+--		if n == 'air' then
+--			minetest.set_node({x = pos.x, y = pos.y+1, z = pos.z}, {name = "nsspf:marasmius_haematocephalus"})
+--			minetest.get_node_timer(pos):start(300)
+--		end
+--	end
+--})
+--
+--
+--minetest.register_abm({
+--	nodenames = {"default:jungletree"},
+--	neighbors = {"air"},
+--	interval = 180.0,
+--	chance = 450,
+--	action = function(pos, node)
+--		local pos1 = {x=pos.x, y=pos.y+1, z=pos.z}
+--		local n = minetest.env:get_node(pos1).name
+--		if n == 'air' then
+--			minetest.set_node({x = pos.x, y = pos.y+1, z = pos.z}, {name = "nsspf:lentinus_strigosus"})
+--			minetest.get_node_timer(pos):start(300)
+--		end
+--	end
+--})
 
 --snowbank fungi
 
 function nsspf_register_snowbankfungi (name, descr, int, ch, spread)
 
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"air"},
-		interval = 1,
-		chance = 1,
-		action = function(pos, node)
-			minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
-			minetest.get_node_timer(pos):start(300)
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"air"},
+	--	interval = 1,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		minetest.set_node(pos, {name="nsspf:"..name.."_fungusdirt"})
+	--		minetest.get_node_timer(pos):start(300)
+	--	end
+	--})
 
 	minetest.register_node("nsspf:"..name.."_mycelium", {
 		description = descr,
@@ -544,81 +544,81 @@ function nsspf_register_snowbankfungi (name, descr, int, ch, spread)
 		end,
 	})
 
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"default:dirt_with_snow"},
-		interval = 2*int,
-		chance = 3*ch,
-		action = function(pos, node)
-			local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
-			local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
-			local n = minetest.get_node(pos1).name
-			local nn = minetest.get_node(pos2).name
-			if (n== "air" or n== "default:snow") and nn== "default:dirt_with_snow" then
-				minetest.set_node(pos1, {name = "nsspf:"..name})
-				minetest.get_node_timer(pos1):start(300)
-			end
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"default:dirt_with_snow"},
-		neighbors = {"air", "default:snow"},
-		interval = 18*int,
-		chance = 5500*ch,
-		action = function(pos, node)
-			local pos3 = {x=pos.x, y=pos.y-1, z=pos.z}
-			local n = minetest.get_node(pos3).name
-			if n== "default:dirt" then
-				minetest.set_node(pos3, {name = "nsspf:"..name.."_mycelium"})
-			end
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"default:dirt"},
-		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 12*int,
-		chance = 10*ch,
-		action = function(pos, node)
-			minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
-		end
-	})
-
-	minetest.register_abm({
-		nodenames = {"nsspf:"..name.."_mycelium"},
-		neighbors = {"nsspf:"..name.."_mycelium"},
-		interval = 10,
-		chance = 1,
-		action = function(pos, node)
-			local flag = 0
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local n = minetest.get_node(pos1).name
-							if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
-								flag = flag+1
-							end
-						end
-					end
-				end
-			if flag > spread then
-				for dx = -4,4 do
-					for dy = -4,1 do
-						for dz = -4,4 do
-							local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
-							local k = minetest.get_node(pos2).name
-								if k and string.match(k,"mycelium") then
-									minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
-									minetest.get_node_timer(pos2):start(300)
-								end
-						end
-					end
-				end
-			end
-		end
-	})
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"default:dirt_with_snow"},
+	--	interval = 2*int,
+	--	chance = 3*ch,
+	--	action = function(pos, node)
+	--		local pos1 = {x=pos.x, y=pos.y+2, z=pos.z}
+	--		local pos2 = {x=pos.x, y=pos.y+1, z=pos.z}
+	--		local n = minetest.get_node(pos1).name
+	--		local nn = minetest.get_node(pos2).name
+	--		if (n== "air" or n== "default:snow") and nn== "default:dirt_with_snow" then
+	--			minetest.set_node(pos1, {name = "nsspf:"..name})
+	--			minetest.get_node_timer(pos1):start(300)
+	--		end
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt_with_snow"},
+	--	neighbors = {"air", "default:snow"},
+	--	interval = 18*int,
+	--	chance = 5500*ch,
+	--	action = function(pos, node)
+	--		local pos3 = {x=pos.x, y=pos.y-1, z=pos.z}
+	--		local n = minetest.get_node(pos3).name
+	--		if n== "default:dirt" then
+	--			minetest.set_node(pos3, {name = "nsspf:"..name.."_mycelium"})
+	--		end
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"default:dirt"},
+	--	neighbors = {"nsspf:"..name.."_mycelium"},
+	--	interval = 12*int,
+	--	chance = 10*ch,
+	--	action = function(pos, node)
+	--		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "nsspf:"..name.."_mycelium"})
+	--	end
+	--})
+	--
+	--minetest.register_abm({
+	--	nodenames = {"nsspf:"..name.."_mycelium"},
+	--	neighbors = {"nsspf:"..name.."_mycelium"},
+	--	interval = 10,
+	--	chance = 1,
+	--	action = function(pos, node)
+	--		local flag = 0
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos1 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local n = minetest.get_node(pos1).name
+	--						if n and string.match(n,"mycelium") then	-- if the name contains "mycelium" then exit
+	--							flag = flag+1
+	--						end
+	--					end
+	--				end
+	--			end
+	--		if flag > spread then
+	--			for dx = -4,4 do
+	--				for dy = -4,1 do
+	--					for dz = -4,4 do
+	--						local pos2 = {x=pos.x+dx, y=pos.y+dy, z=pos.z+dz}
+	--						local k = minetest.get_node(pos2).name
+	--							if k and string.match(k,"mycelium") then
+	--								minetest.set_node({x = pos2.x, y = pos2.y, z = pos2.z}, {name = "nsspf:"..name.."_fungusdirt"})
+	--								minetest.get_node_timer(pos2):start(300)
+	--							end
+	--					end
+	--				end
+	--			end
+	--		end
+	--	end
+	--})
 
 end
 
@@ -645,3 +645,21 @@ if minetest.settings:get('nsspf.allow_default_mushrooms') ~= 'true' then
 		end
 	})
 end
+
+----------------------------------
+minetest.register_lbm({
+	label = "Despawn nsspf mushrooms",
+	name = "nsspf:despawn_mushrooms",
+	nodenames = {"group:nsspf_mushroom"},
+	action = function(pos, node)
+		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "air"})
+	end
+})
+minetest.register_lbm({
+	label = "Despawn nsspf dirt",
+	name = "nsspf:despawn_dirt",
+	nodenames = {"group:nsspf_dirt"},
+	action = function(pos, node)
+		minetest.set_node({x = pos.x, y = pos.y, z = pos.z}, {name = "default:dirt"})
+	end
+})
