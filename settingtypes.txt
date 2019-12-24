@@ -1,0 +1,2 @@
+# Unless this is set to true, default mushrooms will be removed from the world.
+nsspf.allow_default_mushrooms (Allow "default" mushrooms to continue to exist) bool false
