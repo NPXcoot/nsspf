@@ -1690,7 +1690,7 @@ minetest.register_craft({
 	burntime = 120,
 })
 
-if minetest.get_modpath("nssm") then
+if nsspf.nssm then
 
 	minetest.register_craftitem("nsspf:long_lasting_amadou", {
 		description = 'Long Lasting Amadou',
@@ -1711,7 +1711,7 @@ if minetest.get_modpath("nssm") then
 
 end
 
-if minetest.get_modpath("tnt") then
+if nsspf.tnt then
 
 	minetest.register_craftitem("nsspf:lasting_amadou", {
 		description = 'Lasting Amadou',
